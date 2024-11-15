@@ -1,0 +1,46 @@
+---
+// index.astro
+---
+
+<html>
+  <head>
+    <title>Mon site</title>
+  </head>
+  <body>
+    <!-- Splash Screen -->
+    <div
+      id="splash-screen"
+      class="fixed inset-0 bg-white z-50 flex items-center justify-center transition-transform duration-3000 translate-y-0"
+    >
+      <div class="text-center text-black">
+        <img
+          src="/assets/logo.svg"
+          alt="Logo"
+          class="mx-auto mb-8 w-24 h-24 animate-bounce"
+        />
+        <h2 class="text-2xl font-bold mb-2">Bienvenue</h2>
+        <p class="text-lg">Chargement en cours...</p>
+      </div>
+    </div>
+
+    <!-- Le reste de votre application -->
+    <div id="main-content" class="hidden">
+      <!-- Votre contenu principal -->
+      <p>test</p>
+    </div>
+
+    <script>
+      const splashScreen = document.getElementById(
+        "splash-screen"
+      ) as HTMLElement;
+      const mainContent = document.getElementById(
+        "main-content"
+      ) as HTMLElement;
+
+      setTimeout(() => {
+        splashScreen.classList.add("translate-y-[-100%]");
+        mainContent.classList.remove("hidden");
+      }, 3000);
+    </script>
+  </body>
+</html>
