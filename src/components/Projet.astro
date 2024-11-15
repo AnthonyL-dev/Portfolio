@@ -1,0 +1,73 @@
+---
+// Projet.astro
+import { Image } from "astro:assets";
+import Icon from "./Icon.astro";
+import type { iconPaths } from "./IconPaths";
+
+// Définir un type pour chaque projet
+type Projet = {
+  titre: string;
+  description: string;
+  image: string;
+  technologies: string[]; // Un tableau de chaînes pour les technologies
+  lien: string;
+};
+
+// Déclarer un tableau de projets typé
+const projets: Projet[] = [
+  {
+    titre: "Mon Premier Projet",
+    description: "Une application web moderne pour gérer les tâches.",
+    image: "/assets/WindevDashboard.png",
+    technologies: ["Astro", "TailwindCSS", "JavaScript"],
+    lien: "https://monpremierprojet.com",
+  },
+  {
+    titre: "E-commerce",
+    description: "Un site e-commerce complet avec gestion de panier.",
+    image: "/assets/CmasaLogin.png",
+    technologies: ["React", "Node.js", "MongoDB"],
+    lien: "https://ecommerce.com",
+  },
+];
+---
+
+<section id="projets" class="py-12 bg-gray-100">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center mb-8">Mes Projets</h2>
+    <div class="space-y-8">
+      {
+        projets.map((projet) => (
+          <div
+            class="flex flex-col lg:flex-row bg-white shadow-md rounded-lg overflow-hidden"
+            key={projet.titre} // La clé unique pour chaque projet
+          >
+            <img
+              src={projet.image}
+              alt={projet.titre}
+              class="lg:w-1/2 h-48 object-cover"
+            />
+            <div class="p-6 lg:w-1/2">
+            {/* <Icon icon="arrow-link"/> */}
+              <h3 class="text-xl font-semibold mb-2">{projet.titre} </h3>
+              <p class="text-gray-700 mb-4">{projet.description}</p>
+              <p class="text-sm font-medium text-gray-600">
+                Technologies utilisées :
+              </p>
+              <ul class="flex flex-wrap gap-2 mt-2">
+                {projet.technologies.map((tech) => (
+                  <li
+                    class="px-3 py-1 bg-gray-200 text-gray-800 text-sm rounded"
+                    key={tech} // Clé unique pour chaque technologie
+                  >
+                    {tech}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

@@ -4,31 +4,30 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout title="Anthony Lorette">
   <!-- Hero section avec image de fond -->
-  <div class="container w-screen">
-    <!-- Image de fond -->
-    <div class="absolute inset-0 flex justify-center items-end >">
-      <img
-        src="/assets/photo/portrait.png"
-        alt="Photo de Anthony Lorette"
-        class="max-w-[825px] aspect-[1031/992]"
-      />
-      <!-- Overlay optionnel pour améliorer la lisibilité du texte -->
-    </div>
 
-    <!-- Contenu du hero -->
-    <div
-      class="relative z-10 flex items-center justify-center min-h-screen w-screen px-4"
-    >
-      <div class="mx-auto text-center text-black h-screen">
-        <h1 class="text-4xl md:text-6xl font-bold mb-4">Votre Titre</h1>
-        <p class="text-xl md:text-2xl mb-8">Votre sous-titre ou description</p>
-        <button
-          class="bg-white text-black px-8 py-3 rounded-lg hover:bg-opacity-90"
-        >
-          Call to Action
-        </button>
-      </div>
+  <!-- Image de fond -->
+  <div class="absolute inset-0 flex justify-center items-end z-10">
+    <img
+      src="/assets/photo/portrait.png"
+      alt="Photo de Anthony Lorette"
+      class="max-w-[825px] max-h-[90vh] aspect-[1031/992]"
+    />
+    <!-- Overlay optionnel pour améliorer la lisibilité du texte -->
+  </div>
+
+  <!-- Contenu du hero -->
+  <div class="relative flex items-center justify-center min-h-screen w-screen">
+    <div class="text-center text-black">
+      <h1 class="text-4xl md:text-6xl font-bold mb-4">Anthony Lorette</h1>
     </div>
   </div>
+
+  <!-- Message scoll down -->
+
+  <!-- Slide up About -->
   <div class="bg-white py-96"></div>
+
+  <!-- Sections passions -->
+
+
 </Layout>
