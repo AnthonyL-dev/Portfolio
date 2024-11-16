@@ -1,0 +1,115 @@
+<section id="timeline">
+    <!-- Panel 1 -->
+    <div class="tl-item">
+      <div class="tl-bg" style="background-image: url('/assets/clichy.jpg')"></div>
+      <div class="tl-year">
+        <p class="f2 heading--sanSerif">2024</p>
+      </div>
+      <div class="tl-content">
+        <h1>Bureau ACS</h1>
+        <p>En tant que Lead Developer au sein du bureau ACS, situé à Clichy, j'ai été responsable de l’analyse des besoins, de l’élaboration des spécifications techniques, du développement et de la maintenance des applications, ainsi que de la gestion des bases de données et de l’automatisation des processus internes. Je supervisais une équipe de deux personnes.</p>
+      </div>
+    </div>
+  
+    <!-- Panel 2 -->
+    <div class="tl-item">
+      <div class="tl-bg" style="background-image: url('/assets/Paris.jpg')"></div>
+      <div class="tl-year">
+        <p class="f2 heading--sanSerif">2021</p>
+      </div>
+      <div class="tl-content">
+        <h1 class="f3 text--accent ttu">Sigmasoft</h1>
+        <p>Chez Sigmasoft, éditeur de logiciels pour les vendeurs/loueurs de matériels médicaux situé dans le 20ᵉ arrondissement de Paris, j'ai assuré la maintenance de logiciels Windev, fourni du support technique aux clients (assistance et installation de progiciels et matériel), réparé des machines sous Windows, et développé des solutions telles qu’un logiciel de sauvegarde automatique et la mise à jour d’un progiciel pour intégrer l'API de la sécurité sociale.</p>
+      </div>
+    </div>
+  </section>
+  
+
+  <style>
+body {
+  font-family: 'Source Sans Pro', Helvetica Neue, Helvetica, Arial, sans-serif; 
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+#timeline {
+  display: flex;
+  background-color: #031625;
+}
+
+.tl-item {
+  position: relative;
+  width: 50%; /* Deux panels => largeur 50% */
+  height: 100vh;
+  color: #fff;
+  overflow: hidden;
+  transition: width 0.5s ease;
+}
+
+.tl-item:hover {
+  width: 60%; /* Le panel agrandi prendra 60% */
+}
+
+.tl-item:not(:hover) {
+  width: 50%; /* L'autre panel rétrécit à 40% */
+}
+
+.tl-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: filter 0.5s ease;
+  filter: grayscale(100%);
+}
+
+.tl-item:hover .tl-bg {
+  filter: grayscale(0);
+}
+
+.tl-year {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+}
+
+.tl-year p {
+  font-family: 'Pathway Gothic One', Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 1.728rem;
+  line-height: 1.8;
+  
+}
+
+.tl-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  margin: 0 1.618em;
+  top: 55%;
+  opacity: 0;
+  transform: translateY(25px);
+  color: white;
+  display: inline-block;
+  background-color: rgba(0,0,0,.6);
+  padding: 10px;
+  transition: all 0.75s ease 0.5s;
+}
+
+.tl-item:hover .tl-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.tl-content h1 {
+  font-family: 'Pathway Gothic One', Helvetica Neue, Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  color: #1779cf;
+  font-size: 1.44rem;
+}
+
+    </style>

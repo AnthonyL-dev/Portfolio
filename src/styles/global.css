@@ -1,8 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@layer utilities {
-  .clip-path-hexagon {
-    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-  }
+
+/* Animation sur le titre (post-title) */
+::view-transition-group(post-title) {
+  transition:
+    transform 0.5s ease,
+    opacity 0.5s ease;
+}
+
+/* Animation pour un retour à la liste */
+::view-transition-group(back-link) {
+  transition:
+    transform 0.5s ease,
+    opacity 0.5s ease;
 }
