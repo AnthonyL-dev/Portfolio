@@ -37,4 +37,5 @@ export const iconPaths = {
   "mail-icon": `<path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" d="M32 48h160a16 16 0 0 1 16 16v140a16 16 0 0 1-16 16H32a16 16 0 0 1-16-16V64a16 16 0 0 1 16-16zm0 0l80 56 80-56" />`,
   "tiktok-logo": `<path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" d="M168 106a96 96 0 0 0 56 18V84a56 56 0 0 1-56-56h-40v128a28 28 0 1 1-40-25V89a68 68 0 1 0 80 67Z"/>`,
   "arrow-link": ` <path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd"></path>`,
+  "arrow-diagonal-up-right": `<path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" d="M96 160L160 96M160 160V96H96"/>`,
 };

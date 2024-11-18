@@ -1,12 +1,13 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import Panel from "../components/Panel.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<Layout title="Anthony Lorette">
+<BaseLayout title="Anthony Lorette - À PROPOS">
   <!-- Hero section avec image de fond -->
 
   <!-- Image de fond -->
-  <div class="absolute inset-0 flex justify-center items-end z-10">
+  <div class="absolute inset-0 flex justify-center items-end z-10 bg-gray-200">
     <img
       src="/assets/photo/portrait.png"
       alt="Photo de Anthony Lorette"
@@ -25,11 +26,40 @@ import Layout from "../layouts/Layout.astro";
   <!-- Message scoll down -->
 
   <!-- Slide up About -->
-  <div class="bg-white w-screen h-screen">
-    <h1>À propos</h1>
+  <div class="bg-black w-screen h-screen text-white px-52">
+    <h1 class="text-[15vw] w-screen ">À PROPOS</h1>
+    <div class="flex items-start space-x-4">
+      <!-- SVG avec ajustement du ratio pour réduire l'espace vide -->
+      <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="25vw"
+  height="auto"
+  viewBox="6 6 16 16"  // Rogner les bords
+  preserveAspectRatio="xMidYMid meet"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  class="self-start"
+>
+        <line x1="7" y1="17" x2="17" y2="7" />
+        <polyline points="7 7 17 7 17 17" />
+      </svg>
+      
+      <!-- Texte -->
+      <div class="flex flex-col w-3/4 space-y-4">  <!-- Ajout de 'space-y-4' pour espacer les <p> -->
+        <p class="w-[70%] text-gray-100">Derrière son écran, Anthony, vêtu d'un hoodie confortable marqué du logo d’un framework populaire, domine son bureau éclairé par la douce lumière des écrans. Ses lunettes reflètent les lignes de code qui défilent, témoignant de sa concentration intense. Une tasse de café presque vide repose à ses côtés, fidèle compagnon qui alimente sa créativité et sa persévérance. Son environnement, à son image, est un équilibre parfait entre ordre et chaos, avec des câbles enchevêtrés et des carnets griffonnés de notes et de schémas.</p>
+        <p>"Si ça marche, c’est pas un bug, c’est une fonctionnalité." -Anthony Lorette</p>
+      </div>
+    </div>
   </div>
+  
+  
+  <Panel/>
 
+  
   <!-- Sections passions -->
 
 
-</Layout>
+</BaseLayout>
