@@ -49,17 +49,81 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       
       <!-- Texte -->
       <div class="flex flex-col w-3/4 space-y-4">  <!-- Ajout de 'space-y-4' pour espacer les <p> -->
-        <p class="w-[70%] text-gray-100">Derrière son écran, Anthony, vêtu d'un hoodie confortable marqué du logo d’un framework populaire, domine son bureau éclairé par la douce lumière des écrans. Ses lunettes reflètent les lignes de code qui défilent, témoignant de sa concentration intense. Une tasse de café presque vide repose à ses côtés, fidèle compagnon qui alimente sa créativité et sa persévérance. Son environnement, à son image, est un équilibre parfait entre ordre et chaos, avec des câbles enchevêtrés et des carnets griffonnés de notes et de schémas.</p>
+        <p class="w-[80%] text-gray-100">Derrière son écran, Anthony, vêtu d'un hoodie confortable marqué du logo d’un framework populaire, domine son bureau éclairé par la douce lumière des écrans. Ses lunettes reflètent les lignes de code qui défilent, témoignant de sa concentration intense. Une tasse de café presque vide repose à ses côtés, fidèle compagnon qui alimente sa créativité et sa persévérance. Son environnement, à son image, est un équilibre parfait entre ordre et chaos, avec des câbles enchevêtrés et des carnets griffonnés de notes et de schémas.</p>
         <p>"Si ça marche, c’est pas un bug, c’est une fonctionnalité." -Anthony Lorette</p>
       </div>
     </div>
   </div>
   
-  
+  <!-- Carrière-->
   <Panel/>
 
-  
   <!-- Sections passions -->
+  <section class="bg-white py-12">
+    <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-extrabold text-gray-900 text-center mb-8">
+        Mes Passions
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Passion 1 -->
+        <div class="flex flex-col items-center text-center bg-gray-100 p-6 rounded-lg shadow-lg">
+          <div class="mb-4">
+            <svg class="w-12 h-12 text-gray-800" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4 2a2 2 0 00-2 2v12a2 2 0 002 2h12a2 2 0 002-2V4a2 2 0 00-2-2H4zm4 14H5v-4h3v4zm-1-5.25a1.25 1.25 0 110-2.5 1.25 1.25 0 010 2.5zm9 5.25h-3v-3.5a1.5 1.5 0 00-3 0V16H9v-6h2v.5a3.5 3.5 0 016 0V16z"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 mb-2">Développement Web</h3>
+          <p class="text-sm text-gray-700">
+            Concevoir des sites web modernes et intuitifs est ma plus grande passion. J’aime transformer des idées en réalité numérique.
+          </p>
+        </div>
+  
+        <!-- Passion 2 -->
+        <div class="flex flex-col items-center text-center bg-gray-100 p-6 rounded-lg shadow-lg">
+          <div class="mb-4">
+            <svg class="w-12 h-12 text-gray-800" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M10 2a8 8 0 100 16 8 8 0 000-16zm3 9H7v-1h6v1z" clip-rule="evenodd"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 mb-2">Nature & Randonnée</h3>
+          <p class="text-sm text-gray-700">
+            Explorer les sentiers et m’imprégner de la beauté des paysages est une source infinie d’inspiration et de sérénité pour moi.
+          </p>
+        </div>
+  
+        <!-- Passion 3 -->
+        <div class="flex flex-col items-center text-center bg-gray-100 p-6 rounded-lg shadow-lg">
+          <div class="mb-4">
+            <svg class="w-12 h-12 text-gray-800" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10 2a8 8 0 100 16 8 8 0 000-16zm3.5 9.5H11v2.5a.5.5 0 01-1 0V11H6.5a.5.5 0 010-1H10V7.5a.5.5 0 011 0V10h2.5a.5.5 0 010 1z"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 mb-2">Cuisine</h3>
+          <p class="text-sm text-gray-700">
+            J’adore expérimenter en cuisine, explorer de nouvelles saveurs et partager des moments gourmands avec mes proches.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
 
-
+  <!-- Contacter moi-->
+  <section class="bg-gray-50 py-16 text-gray-800 text-center">
+    <div class="container mx-auto px-6">
+      <h2 class="text-4xl font-bold mb-4">Contactez-moi</h2>
+      <p class="text-lg mb-6">
+        Vous souhaitez discuter d'un projet, poser une question ou simplement dire bonjour ? 
+        Je suis toujours ravi d'échanger !
+      </p>
+      <a
+        href="mailto:lorette.anthony.jrd@gmail.com"
+        class="inline-block bg-gray-800 text-white font-semibold px-6 py-3 rounded-full shadow-md hover:bg-gray-700 hover:shadow-lg transition duration-300"
+      >
+        Envoyez-moi un email
+      </a>
+    </div>
+  </section>
+  
 </BaseLayout>
