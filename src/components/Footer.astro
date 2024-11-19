@@ -5,11 +5,12 @@ import Icon from "./Icon.astro";
 <footer class="p-4 bg-white md:p-6 lg:p-8 dark:bg-gray-800 w-screen">
   <div class="mx-auto  flex flex-wrap justify-between items-center">
     <!-- Section gauche : Copyright -->
-    <div class="text-sm text-gray-500 dark:text-gray-400">
+    <div class="flex-1 text-left text-sm text-gray-500 dark:text-gray-400">
       © 2024-2025 Anthony Lorette™
     </div>
 
     <!-- Section centrale : Options de navigation -->
+     <div class="flex-1 text-center">
     <ul class="flex flex-wrap justify-center items-center space-x-4 md:space-x-6 text-gray-900 dark:text-white">
       <li>
         <a href="/" class="hover:underline">À propos</a>
@@ -21,9 +22,11 @@ import Icon from "./Icon.astro";
         <a href="/contact" class="hover:underline">Technologies</a>
       </li>
     </ul>
+  </div>
 
     <!-- Section droite : Moyens de contact -->
-    <div class="flex items-center space-x-4">
+     
+    <div class="flex flex-1 justify-end space-x-4">
       <a href="mailto:anthony@example.com" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
         <Icon icon="mail-icon"/>
       </a>
@@ -33,6 +36,7 @@ import Icon from "./Icon.astro";
       <a href="https://linkedin.com/in/anthony" target="_blank" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
         <Icon icon="github-logo"/>
       </a>
-    </div>
+
+   </div>
   </div>
 </footer>
