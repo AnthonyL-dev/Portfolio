@@ -1,8 +1,5 @@
 ---
 // Projet.astro
-import { Image } from "astro:assets";
-import Icon from "./Icon.astro";
-import type { iconPaths } from "./IconPaths";
 
 // Définir un type pour chaque projet
 type Projet = {
@@ -40,7 +37,7 @@ const projets: Projet[] = [
         projets.map((projet) => (
           <div
             class="flex flex-col lg:flex-row bg-white shadow-md rounded-lg overflow-hidden"
-            key={projet.titre} // La clé unique pour chaque projet
+            
           >
             <img
               src={projet.image}
@@ -58,7 +55,7 @@ const projets: Projet[] = [
                 {projet.technologies.map((tech) => (
                   <li
                     class="px-3 py-1 bg-gray-200 text-gray-800 text-sm rounded"
-                    key={tech} // Clé unique pour chaque technologie
+                  
                   >
                     {tech}
                   </li>
