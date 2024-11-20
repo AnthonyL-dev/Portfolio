@@ -1,18 +1,13 @@
 ---
+import Keyboard from "../components/Keyboard.astro";
+import Safari from "../components/Safari.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
-import "../styles/global.css";
 ---
-<BaseLayout title="Technologie">
-<div class="absolute inset-0 flex justify-center items-end z-10">
-    <img
-      src="/assets/photo/portrait.png"
-      alt="Photo de Anthony Lorette"
-      class="max-w-[825px] max-h-[90vh] aspect-[1031/992]"
-    />
-    <!-- Overlay optionnel pour améliorer la lisibilité du texte -->
-  </div>
-<BaseLayout/>
 
-<style>
-  
-</style>
+<BaseLayout
+  title="Technologie"
+  description="The personal site of Anthony Lorette"
+/>
+<Safari />
+<Keyboard />
+<p>test</p>

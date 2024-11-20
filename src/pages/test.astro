@@ -4,22 +4,37 @@ import Passion from "../components/Passion.astro";
 import Projet from "../components/Projet.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-const cardLinks: { image: string; alt: string;description:string ,}[] = [
-  { image: "/assets/jeux_video.jpg", alt: "Passion jeux vidéo" ,description:"Les jeux vidéo sont pour moi une source infinie d'évasion et de défis. Que ce soit pour explorer des mondes fantastiques ou repousser mes limites dans des compétitions en ligne, ils nourrissent ma créativité et mon esprit stratégique. " },
-  { image: "/assets/velo.jpg", alt: "Passion vélo" ,description:"Le vélo est ma manière préférée de rester actif tout en explorant la nature. Chaque sortie est une occasion de se dépasser, de découvrir de nouveaux paysages et de profiter de la liberté que procure la route." },
-  { image: "/assets/lecture.jpg", alt: "Passion lecture" ,description:"La lecture est mon échappatoire pour voyager dans le temps et l'espace. Que ce soit des romans captivants ou des essais inspirants, elle enrichit ma vision du monde et nourrit mon imagination. " },
+const cardLinks: { image: string; alt: string; description: string }[] = [
+  {
+    image: "/assets/jeux_video.jpg",
+    alt: "Passion jeux vidéo",
+    description:
+      "Les jeux vidéo sont pour moi une source infinie d'évasion et de défis. Que ce soit pour explorer des mondes fantastiques ou repousser mes limites dans des compétitions en ligne, ils nourrissent ma créativité et mon esprit stratégique. ",
+  },
+  {
+    image: "/assets/velo.jpg",
+    alt: "Passion vélo",
+    description:
+      "Le vélo est ma manière préférée de rester actif tout en explorant la nature. Chaque sortie est une occasion de se dépasser, de découvrir de nouveaux paysages et de profiter de la liberté que procure la route.",
+  },
+  {
+    image: "/assets/lecture.jpg",
+    alt: "Passion lecture",
+    description:
+      "La lecture est mon échappatoire pour voyager dans le temps et l'espace. Que ce soit des romans captivants ou des essais inspirants, elle enrichit ma vision du monde et nourrit mon imagination. ",
+  },
 ];
 ---
 
-<BaseLayout title="test" />
+<BaseLayout title="test" description="The personal site of Anthony Lorette" />
 <!-- <Splashscreen /> -->
 <Projet />
 <Panel />
 <div class="flex justify-evenly">
-    {
-        cardLinks.map(({ image, alt , description }) => (
-          <Passion image={image} alt={alt} description={description}/>
-        ))
-      }
+  {
+    cardLinks.map(({ image, alt, description }) => (
+      <Passion image={image} alt={alt} description={description} />
+    ))
+  }
 </div>
-<BaseLayout/>
+<BaseLayout />

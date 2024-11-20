@@ -439,12 +439,29 @@ a.tag,
 	}
 	
 	.hover--options {
-		display: none;
-		flex-wrap: wrap; 
-		gap: 6px;
-		margin-top: -4px;
-		padding-inline: calc(var(--content-padding) + 4px);
-		}
+    display: none; /* Par défaut, masqué */
+    flex-wrap: wrap;
+    gap: 12px; /* Espacement entre les éléments */
+    margin-top: -4px; /* Ajuster selon votre design */
+    padding: 16px; /* Plus d'espace autour */
+    
+    
+}
+
+.hover--options h1 {
+    font-size: 1.25rem; /* Taille du titre */
+    font-weight: bold;
+    margin: 0 0 8px 0; /* Espacement sous le titre */
+    color: #333; /* Texte sombre */
+}
+
+.hover--options p {
+    font-size: 1rem; /* Taille du paragraphe */
+    line-height: 1.5; /* Espacement des lignes */
+    color: #555; /* Texte légèrement plus clair */
+    margin: 0;
+}
+
 		
 		
 	&:not(.featured) {
