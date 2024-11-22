@@ -17,6 +17,11 @@ const iconLinks: {
   icon: keyof typeof iconPaths;
 }[] = [
   {
+    label: "GitHub",
+    href: "https://github.com/AnthonyL-dev",
+    icon: "github-logo",
+  },
+  {
     label: "Email",
     href: "mailto:lorette.anthony.jrd@gmail.com",
     icon: "mail-icon",
@@ -26,17 +31,12 @@ const iconLinks: {
     href: "https://www.linkedin.com/in/anthony-lorette",
     icon: "linkedin-logo",
   },
-  {
-    label: "GitHub",
-    href: "https://github.com/AnthonyL-dev",
-    icon: "github-logo",
-  },
 ];
 ---
 
 <nav
   id="animated-nav"
-  class="top-6 left-0 right-0 z-[9999] w-screen font-brand font-medium mb-14 flex justify-center"
+  class="absolute top-6 left-0 right-0 z-[9999] w-screen font-brand font-medium mb-14 flex justify-center transition-all duration-700 ease-in-out opacity-0 -translate-y-full"
 >
   <div class="flex flex-row bg-white rounded-lg justify-between min-w-[80vw]">
     <div class="flex justify-between gap-2 p-6 lg:p-0">
@@ -182,4 +182,16 @@ const iconLinks: {
     }
   }
   customElements.define("menu-button", MenuButton);
+
+  window.addEventListener("DOMContentLoaded", () => {
+    const nav = document.getElementById("animated-nav");
+
+    if (nav) {
+      // Vérifie que l'élément existe
+      nav.classList.remove("opacity-0", "-translate-y-full"); // Enlève les classes d'état initial
+      nav.classList.add("opacity-100", "translate-y-0"); // Ajoute les classes d'état final
+    } else {
+      console.error("L'élément avec l'ID 'animated-nav' est introuvable.");
+    }
+  });
 </script>

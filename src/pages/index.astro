@@ -1,20 +1,39 @@
 ---
+import AnimatedBackground from "../components/AnimatedBackground.astro";
 import Panel from "../components/Panel.astro";
 import Passion from "../components/Passion.astro";
-import BaseLayout from "../layouts/BaseLayout.astro";
+import HeroLayout from "../layouts/HeroLayout.astro";
 
-const cardLinks: { image: string; alt: string;description:string ,}[] = [
-  { image: "/assets/jeux_video.jpg", alt: "Passion jeux vidéo" ,description:"Les jeux vidéo sont pour moi une source infinie d'évasion et de défis. Que ce soit pour explorer des mondes fantastiques ou repousser mes limites dans des compétitions en ligne, ils nourrissent ma créativité et mon esprit stratégique. " },
-  { image: "/assets/velo.jpg", alt: "Passion vélo" ,description:"Le vélo est ma manière préférée de rester actif tout en explorant la nature. Chaque sortie est une occasion de se dépasser, de découvrir de nouveaux paysages et de profiter de la liberté que procure la route." },
-  { image: "/assets/lecture.jpg", alt: "Passion lecture" ,description:"La lecture est mon échappatoire pour voyager dans le temps et l'espace. Que ce soit des romans captivants ou des essais inspirants, elle enrichit ma vision du monde et nourrit mon imagination. " },
+const cardLinks: { image: string; alt: string; description: string }[] = [
+  {
+    image: "/assets/jeux_video.jpg",
+    alt: "Passion jeux vidéo",
+    description:
+      "Les jeux vidéo sont pour moi une source infinie d'évasion et de défis. Que ce soit pour explorer des mondes fantastiques ou repousser mes limites dans des compétitions en ligne, ils nourrissent ma créativité et mon esprit stratégique. ",
+  },
+  {
+    image: "/assets/velo.jpg",
+    alt: "Passion vélo",
+    description:
+      "Le vélo est ma manière préférée de rester actif tout en explorant la nature. Chaque sortie est une occasion de se dépasser, de découvrir de nouveaux paysages et de profiter de la liberté que procure la route.",
+  },
+  {
+    image: "/assets/lecture.jpg",
+    alt: "Passion lecture",
+    description:
+      "La lecture est mon échappatoire pour voyager dans le temps et l'espace. Que ce soit des romans captivants ou des essais inspirants, elle enrichit ma vision du monde et nourrit mon imagination. ",
+  },
 ];
 ---
 
-<BaseLayout title="Anthony Lorette - À PROPOS" description="The personal site of Anthony Lorette">
+<HeroLayout
+  title="Anthony Lorette - À PROPOS"
+  description="The personal site of Anthony Lorette"
+>
   <!-- Hero section avec image de fond -->
 
   <!-- Image de fond -->
-  <div class="absolute inset-0 flex justify-center items-end z-10 bg-gray-200">
+  <div class="absolute inset-0 flex justify-center items-end z-10">
     <img
       src="/assets/photo/portrait.png"
       alt="Photo de Anthony Lorette"
@@ -25,48 +44,65 @@ const cardLinks: { image: string; alt: string;description:string ,}[] = [
 
   <!-- Contenu du hero -->
   <div class="relative flex items-center justify-center min-h-screen w-screen">
-    <div class="text-center text-black">
+    <!-- <div class="text-center text-black">
       <h1 class="text-4xl md:text-6xl font-bold mb-4">Anthony Lorette</h1>
-    </div>
+    </div> -->
+    <AnimatedBackground />
   </div>
 
   <!-- Message scoll down -->
 
   <!-- Slide up About -->
   <div class="bg-black w-screen h-screen text-white px-52">
-    <h1 class="text-[15vw] w-screen ">À PROPOS</h1>
+    <h1 class="text-[15vw] w-screen">À PROPOS</h1>
     <div class="flex items-start space-x-4">
       <!-- SVG avec ajustement du ratio pour réduire l'espace vide -->
       <svg
-  xmlns="http://www.w3.org/2000/svg"
-  width="25vw"
-  height="auto"
-  viewBox="6 6 16 16"  
-  preserveAspectRatio="xMidYMid meet"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
-  class="self-start"
->
-        <line x1="7" y1="17" x2="17" y2="7" />
-        <polyline points="7 7 17 7 17 17" />
+        xmlns="http://www.w3.org/2000/svg"
+        width="25vw"
+        height="auto"
+        viewBox="6 6 16 16"
+        preserveAspectRatio="xMidYMid meet"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="self-start"
+      >
+        <line x1="7" y1="17" x2="17" y2="7"></line>
+        <polyline points="7 7 17 7 17 17"></polyline>
       </svg>
-      
+
       <!-- Texte -->
-      <div class="flex flex-col w-3/4 space-y-4">  <!-- Ajout de 'space-y-4' pour espacer les <p> -->
-        <p class="w-[80%] text-gray-100">Derrière son écran, Anthony, vêtu d'un hoodie confortable marqué du logo d’un framework populaire, domine son bureau éclairé par la douce lumière des écrans. Ses lunettes reflètent les lignes de code qui défilent, témoignant de sa concentration intense. Une tasse de café presque vide repose à ses côtés, fidèle compagnon qui alimente sa créativité et sa persévérance. Son environnement, à son image, est un équilibre parfait entre ordre et chaos, avec des câbles enchevêtrés et des carnets griffonnés de notes et de schémas.</p>
-        <p>"Si ça marche, c’est pas un bug, c’est une fonctionnalité." -Anthony Lorette</p>
+      <div class="flex flex-col w-3/4 space-y-4">
+        <!-- Ajout de 'space-y-4' pour espacer les <p> -->
+        <p class="w-[80%] text-gray-100">
+          Derrière son écran, Anthony, vêtu d'un hoodie confortable marqué du
+          logo d’un framework populaire, domine son bureau éclairé par la douce
+          lumière des écrans. Ses lunettes reflètent les lignes de code qui
+          défilent, témoignant de sa concentration intense. Une tasse de café
+          presque vide repose à ses côtés, fidèle compagnon qui alimente sa
+          créativité et sa persévérance. Son environnement, à son image, est un
+          équilibre parfait entre ordre et chaos, avec des câbles enchevêtrés et
+          des carnets griffonnés de notes et de schémas.
+        </p>
+        <p>
+          "Si ça marche, c’est pas un bug, c’est une fonctionnalité." -Anthony
+          Lorette
+        </p>
       </div>
     </div>
   </div>
-  
+
   <!-- Carrière-->
-  <Panel/>
+  <Panel />
 
   <!-- Philosophie de travail-->
-  <section id="philosophy" class="py-16 bg-gray-100 dark:bg-gray-900 w-screen h-auto">
+  <section
+    id="philosophy"
+    class="py-16 bg-gray-100 dark:bg-gray-900 w-screen h-auto"
+  >
     <div class="max-w-screen-xl mx-auto px-4 text-center">
       <h2 class="text-3xl font-extrabold text-gray-800 dark:text-white mb-6">
         Ma Philosophie de Travail
@@ -75,60 +111,80 @@ const cardLinks: { image: string; alt: string;description:string ,}[] = [
         "Un bon code est un code lisible, réutilisable et maintenable."
       </p>
       <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
-        Le rôle d’un développeur ne se limite pas à écrire des lignes de code. Notre mission première est d’apporter des solutions à des problématiques, et la manière dont nous les concevons fait toute la différence.
+        Le rôle d’un développeur ne se limite pas à écrire des lignes de code.
+        Notre mission première est d’apporter des solutions à des
+        problématiques, et la manière dont nous les concevons fait toute la
+        différence.
       </p>
       <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-8">
-        Chaque projet est une opportunité de simplifier, d’enrichir et d’optimiser l’expérience des utilisateurs. Il s’agit d’accompagner ces derniers dans leur quotidien en proposant des outils fiables, intuitifs et durables.
+        Chaque projet est une opportunité de simplifier, d’enrichir et
+        d’optimiser l’expérience des utilisateurs. Il s’agit d’accompagner ces
+        derniers dans leur quotidien en proposant des outils fiables, intuitifs
+        et durables.
       </p>
       <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-12">
-        En écrivant du code, je m’efforce de créer une véritable valeur ajoutée, tout en veillant à ce qu’il reste lisible, réutilisable et maintenable. Parce qu’un bon code, c’est avant tout celui qui continue d’être utile et performant, même avec le temps.
+        En écrivant du code, je m’efforce de créer une véritable valeur ajoutée,
+        tout en veillant à ce qu’il reste lisible, réutilisable et maintenable.
+        Parce qu’un bon code, c’est avant tout celui qui continue d’être utile
+        et performant, même avec le temps.
       </p>
-  
+
       <div class="grid gap-8 mt-10 md:grid-cols-3">
-        <div class="p-6 bg-white shadow-lg dark:bg-gray-800 rounded-lg transition-transform transform hover:scale-105">
-          <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-3">Lisibilité</h3>
+        <div
+          class="p-6 bg-white shadow-lg dark:bg-gray-800 rounded-lg transition-transform transform hover:scale-105"
+        >
+          <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-3">
+            Lisibilité
+          </h3>
           <p class="text-gray-600 dark:text-gray-400">
-            Chaque ligne de code doit être claire et compréhensible, quel que soit le niveau d'expérience du développeur.
+            Chaque ligne de code doit être claire et compréhensible, quel que
+            soit le niveau d'expérience du développeur.
           </p>
         </div>
-        <div class="p-6 bg-white shadow-lg dark:bg-gray-800 rounded-lg transition-transform transform hover:scale-105">
-          <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-3">Réutilisabilité</h3>
+        <div
+          class="p-6 bg-white shadow-lg dark:bg-gray-800 rounded-lg transition-transform transform hover:scale-105"
+        >
+          <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-3">
+            Réutilisabilité
+          </h3>
           <p class="text-gray-600 dark:text-gray-400">
-            J'écris des composants et des fonctions modulaires qui peuvent être réutilisés dans différents contextes pour plus d'efficacité.
+            J'écris des composants et des fonctions modulaires qui peuvent être
+            réutilisés dans différents contextes pour plus d'efficacité.
           </p>
         </div>
-        <div class="p-6 bg-white shadow-lg dark:bg-gray-800 rounded-lg transition-transform transform hover:scale-105">
-          <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-3">Maintenabilité</h3>
+        <div
+          class="p-6 bg-white shadow-lg dark:bg-gray-800 rounded-lg transition-transform transform hover:scale-105"
+        >
+          <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-3">
+            Maintenabilité
+          </h3>
           <p class="text-gray-600 dark:text-gray-400">
-            Le code bien documenté et structuré facilite les mises à jour et la collaboration sur le long terme.
+            Le code bien documenté et structuré facilite les mises à jour et la
+            collaboration sur le long terme.
           </p>
         </div>
       </div>
     </div>
   </section>
-  
-  
 
   <!-- Sections passions -->
-   <section>
-  <div class="flex justify-evenly mt-6">
-    {
-        cardLinks.map(({ image, alt , description }) => (
-          <Passion image={image} alt={alt} description={description}/>
+  <section>
+    <div class="flex justify-evenly mt-6">
+      {
+        cardLinks.map(({ image, alt, description }) => (
+          <Passion image={image} alt={alt} description={description} />
         ))
       }
-</div>
+    </div>
   </section>
-  
-  
 
   <!-- Contacter moi-->
   <section class="bg-gray-50 py-16 text-gray-800 text-center">
     <div class="container mx-auto px-6">
       <h2 class="text-4xl font-bold mb-4">Contactez-moi</h2>
       <p class="text-lg mb-6">
-        Vous souhaitez discuter d'un projet, poser une question ou simplement dire bonjour ? 
-        Je suis toujours ravi d'échanger !
+        Vous souhaitez discuter d'un projet, poser une question ou simplement
+        dire bonjour ? Je suis toujours ravi d'échanger !
       </p>
       <a
         href="mailto:lorette.anthony.jrd@gmail.com"
@@ -138,5 +194,4 @@ const cardLinks: { image: string; alt: string;description:string ,}[] = [
       </a>
     </div>
   </section>
-  
-</BaseLayout>
+</HeroLayout>

@@ -1,0 +1,73 @@
+---
+const tabs = [
+  { id: "tab1", label: "Tab 1", content: "This is the content for Tab 1." },
+  { id: "tab2", label: "Tab 2", content: "This is the content for Tab 2." },
+  { id: "tab3", label: "Tab 3", content: "This is the content for Tab 3." },
+];
+---
+
+<div
+  class="flex flex-col md:flex-row max-w-4xl mx-auto border border-gray-200 rounded-lg overflow-hidden"
+>
+  <!-- Tab Buttons -->
+  <div
+    id="tabs"
+    class="flex flex-row md:flex-col w-full md:w-48 bg-gray-100 border-b md:border-b-0 md:border-r border-gray-200"
+  >
+    {
+      tabs.map((tab) => (
+        <button
+          class="tab-btn p-4 text-left w-full cursor-pointer hover:bg-gray-200"
+          data-target={tab.id}
+        >
+          {tab.label}
+        </button>
+      ))
+    }
+  </div>
+
+  <!-- Tab Content -->
+  <div id="tab-content" class="flex-1 p-6">
+    {
+      tabs.map((tab, index) => (
+        <div
+          id={tab.id}
+          class={`tab-content ${index === 0 ? "block" : "hidden"}`}
+        >
+          {tab.content}
+        </div>
+      ))
+    }
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const tabButtons = document.querySelectorAll(".tab-btn");
+    const tabContents = document.querySelectorAll(".tab-content");
+
+    tabButtons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const target = btn.getAttribute("data-target");
+        if (!target) return; // Ensure `target` is not null or undefined
+
+        // Remove active state from all buttons
+        tabButtons.forEach((btn) =>
+          btn.classList.remove("bg-gray-300", "font-bold", "text-gray-900")
+        );
+
+        // Hide all content
+        tabContents.forEach((content) => content.classList.add("hidden"));
+
+        // Activate the clicked button
+        btn.classList.add("bg-gray-300", "font-bold", "text-gray-900");
+
+        // Safely find the corresponding tab content and show it
+        const contentElement = document.getElementById(target);
+        if (contentElement) {
+          contentElement.classList.remove("hidden");
+        }
+      });
+    });
+  });
+</script>
