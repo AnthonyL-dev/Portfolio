@@ -1,0 +1,122 @@
+---
+
+---
+
+<style>
+  .wrap {
+    position: relative;
+    width: 50vw; /* 50% de la largeur de la fenêtre */
+    height: 30vh; /* 30% de la hauteur de la fenêtre */
+    border: solid 0.2vw #fff; /* Épaisseur proportionnelle */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+  }
+
+  #half {
+    position: absolute;
+    width: 0;
+    height: 100%;
+    border-left: dotted 0.2vw #fff; /* Épaisseur proportionnelle */
+    left: 50%;
+    z-index: 1;
+  }
+
+  #sidel,
+  #sider,
+  #ball {
+    position: absolute;
+    width: 1vw; /* Taille proportionnelle */
+    height: 10vh;
+    background-color: #fff;
+  }
+
+  #sidel {
+    left: 5%;
+    top: 10%;
+    animation: sideleft 3s infinite alternate ease-in-out;
+  }
+
+  #sider {
+    right: 5%;
+    bottom: 10%;
+    animation: sideright 3s infinite ease-in-out;
+  }
+
+  #ball {
+    left: 90%;
+    top: 80%;
+    width: 1vw; /* Taille de la balle proportionnelle */
+    height: 1vw; /* Taille de la balle proportionnelle */
+    animation: pong 3s infinite linear;
+  }
+
+  @keyframes sideleft {
+    0% {
+      top: 5%;
+    }
+    25% {
+      top: 10%;
+    }
+    50% {
+      top: 80%;
+    }
+    75% {
+      top: 70%;
+    }
+    100% {
+      top: 5%;
+    }
+  }
+
+  @keyframes sideright {
+    0% {
+      top: 50%;
+    }
+    25% {
+      top: 10%;
+    }
+    50% {
+      top: 60%;
+    }
+    60% {
+      top: 80%;
+    }
+    100% {
+      top: 50%;
+    }
+  }
+
+  @keyframes pong {
+    0% {
+      left: 5%;
+      top: 10%;
+    }
+    5% {
+      left: 10%;
+      top: 0%;
+    }
+    55% {
+      left: 90%;
+      top: 80%;
+    }
+    65% {
+      left: 85%;
+      top: 100%;
+    }
+    100% {
+      left: 5%;
+      top: 10%;
+    }
+  }
+</style>
+<div class="w-screen h-screen flex items-center justify-center">
+  <div class="wrap">
+    <div id="half"></div>
+    <div id="sidel"></div>
+    <div id="sider"></div>
+    <div id="ball"></div>
+  </div>
+</div>

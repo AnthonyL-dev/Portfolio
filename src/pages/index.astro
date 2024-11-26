@@ -1,7 +1,7 @@
 ---
-import AnimatedBackground from "../components/AnimatedBackground.astro";
 import Panel from "../components/Panel.astro";
 import Passion from "../components/Passion.astro";
+import AnimatedBackground from "../components/temp/AnimatedBackground.astro";
 import HeroLayout from "../layouts/HeroLayout.astro";
 
 const cardLinks: { image: string; alt: string; description: string }[] = [
@@ -9,7 +9,7 @@ const cardLinks: { image: string; alt: string; description: string }[] = [
     image: "/assets/jeux_video.jpg",
     alt: "Passion jeux vidéo",
     description:
-      "Les jeux vidéo sont pour moi une source infinie d'évasion et de défis. Que ce soit pour explorer des mondes fantastiques ou repousser mes limites dans des compétitions en ligne, ils nourrissent ma créativité et mon esprit stratégique. ",
+      "Les jeux vidéo sont pour moi une manière d'explorer des mondes fantastiques ou repousser mes limites dans des compétitions en ligne, ils nourrissent ma créativité et mon esprit stratégique. ",
   },
   {
     image: "/assets/velo.jpg",
@@ -26,6 +26,10 @@ const cardLinks: { image: string; alt: string; description: string }[] = [
 ];
 ---
 
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+  rel="stylesheet"
+/>
 <HeroLayout
   title="Anthony Lorette - À PROPOS"
   description="The personal site of Anthony Lorette"
@@ -43,57 +47,99 @@ const cardLinks: { image: string; alt: string; description: string }[] = [
   </div>
 
   <!-- Contenu du hero -->
-  <div class="relative flex items-center justify-center min-h-screen w-screen">
-    <!-- <div class="text-center text-black">
-      <h1 class="text-4xl md:text-6xl font-bold mb-4">Anthony Lorette</h1>
-    </div> -->
+  <div class="h-screen w-screen">
     <AnimatedBackground />
   </div>
 
   <!-- Message scoll down -->
 
   <!-- Slide up About -->
-  <div class="bg-black w-screen h-screen text-white px-52">
-    <h1 class="text-[15vw] w-screen">À PROPOS</h1>
-    <div class="flex items-start space-x-4">
-      <!-- SVG avec ajustement du ratio pour réduire l'espace vide -->
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="25vw"
-        height="auto"
-        viewBox="6 6 16 16"
-        preserveAspectRatio="xMidYMid meet"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        class="self-start"
-      >
-        <line x1="7" y1="17" x2="17" y2="7"></line>
-        <polyline points="7 7 17 7 17 17"></polyline>
-      </svg>
+  <section class="py-20 bg-gray-800 text-gray-100" id="about">
+    <div class="container mx-auto px-6 md:px-12">
+      <div class="flex flex-col gap-12">
+        <!-- Texte à propos -->
+        <div class="text-center md:text-left">
+          <h2 class="text-4xl font-extrabold text-gray-50">À propos de moi</h2>
+          <p class="mt-4 text-xl text-gray-300 max-w-3xl mx-auto md:mx-0">
+            Bonjour ! Je suis <strong class="text-indigo-400"
+              >Anthony Lorette</strong
+            >, un développeur passionné par l'informatique et l'innovation
+            numérique. Bien que je sois encore en début de parcours dans le
+            développement web, j'ai déjà acquis des compétences solides en
+            développement d'applications mobiles et en programmation logicielle.
+          </p>
+          <p class="mt-4 text-lg text-gray-400 max-w-3xl mx-auto md:mx-0">
+            Je suis actuellement en train de me perfectionner en développement
+            web, particulièrement dans les technologies front-end et back-end
+            modernes, et je suis constamment à la recherche de nouvelles
+            opportunités pour apprendre et grandir professionnellement.
+          </p>
+        </div>
 
-      <!-- Texte -->
-      <div class="flex flex-col w-3/4 space-y-4">
-        <!-- Ajout de 'space-y-4' pour espacer les <p> -->
-        <p class="w-[80%] text-gray-100">
-          Derrière son écran, Anthony, vêtu d'un hoodie confortable marqué du
-          logo d’un framework populaire, domine son bureau éclairé par la douce
-          lumière des écrans. Ses lunettes reflètent les lignes de code qui
-          défilent, témoignant de sa concentration intense. Une tasse de café
-          presque vide repose à ses côtés, fidèle compagnon qui alimente sa
-          créativité et sa persévérance. Son environnement, à son image, est un
-          équilibre parfait entre ordre et chaos, avec des câbles enchevêtrés et
-          des carnets griffonnés de notes et de schémas.
-        </p>
-        <p>
-          "Si ça marche, c’est pas un bug, c’est une fonctionnalité." -Anthony
-          Lorette
-        </p>
+        <!-- Compétences clés -->
+        <div class="mt-12">
+          <h3
+            class="text-2xl font-semibold text-gray-50 text-center md:text-left"
+          >
+            Compétences clés
+          </h3>
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4 text-lg text-gray-300"
+          >
+            <!-- Outils PCSOFT -->
+            <div
+              class="flex items-center gap-4 p-4 bg-gray-700 rounded-lg shadow-md"
+            >
+              <i class="fas fa-tools w-8 h-8 text-gray-400"></i>
+              <span class="font-medium">
+                <strong>Outils PCSOFT</strong>
+                <br />
+                Windev, Windev Mobile, HFSQL
+              </span>
+            </div>
+
+            <!-- Next.js -->
+            <div
+              class="flex items-center gap-4 p-4 bg-gray-700 rounded-lg shadow-md"
+            >
+              <i class="fab fa-react w-8 h-8 text-blue-400"></i>
+              <span class="font-medium">
+                <strong>Web</strong>
+                <br />
+                Next.js, React.js, TypeScript
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pourquoi travailler avec moi ? -->
+        <div class="mt-12">
+          <h3
+            class="text-xl font-semibold text-gray-50 text-center md:text-left"
+          >
+            Pourquoi travailler avec moi ?
+          </h3>
+          <ul class="mt-4 text-lg text-gray-300 list-disc list-inside">
+            <li class="mb-2">
+              ✅ <strong>Passion pour l'apprentissage</strong> : Toujours curieux
+              et motivé pour développer mes compétences, particulièrement en développement
+              web et mobile.
+            </li>
+            <li class="mb-2">
+              ✅ <strong>Adaptabilité</strong> : Capable de travailler avec différents
+              outils et technologies, de Windev à React.js, et prêt à apprendre de
+              nouvelles méthodologies et langages.
+            </li>
+            <li class="mb-2">
+              ✅ <strong>Engagement</strong> : Je mets toujours un point d'honneur
+              à livrer un travail de qualité, que ce soit pour une application mobile
+              ou une application web.
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
+  </section>
 
   <!-- Carrière-->
   <Panel />
@@ -101,64 +147,64 @@ const cardLinks: { image: string; alt: string; description: string }[] = [
   <!-- Philosophie de travail-->
   <section
     id="philosophy"
-    class="py-16 bg-gray-100 dark:bg-gray-900 w-screen h-auto"
+    class="py-16 bg-gray-800 text-gray-100 w-screen h-auto"
   >
     <div class="max-w-screen-xl mx-auto px-4 text-center">
-      <h2 class="text-3xl font-extrabold text-gray-800 dark:text-white mb-6">
+      <h2 class="text-3xl font-extrabold text-gray-50 mb-6">
         Ma Philosophie de Travail
       </h2>
-      <p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
+      <p class="text-lg text-gray-300 leading-relaxed mb-6">
         "Un bon code est un code lisible, réutilisable et maintenable."
       </p>
-      <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
+      <p class="text-lg text-gray-300 leading-relaxed mb-6">
         Le rôle d’un développeur ne se limite pas à écrire des lignes de code.
         Notre mission première est d’apporter des solutions à des
         problématiques, et la manière dont nous les concevons fait toute la
         différence.
       </p>
-      <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-8">
+      <p class="text-lg text-gray-300 leading-relaxed mb-8">
         Chaque projet est une opportunité de simplifier, d’enrichir et
         d’optimiser l’expérience des utilisateurs. Il s’agit d’accompagner ces
         derniers dans leur quotidien en proposant des outils fiables, intuitifs
         et durables.
       </p>
-      <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-12">
-        En écrivant du code, je m’efforce de créer une véritable valeur ajoutée,
-        tout en veillant à ce qu’il reste lisible, réutilisable et maintenable.
-        Parce qu’un bon code, c’est avant tout celui qui continue d’être utile
-        et performant, même avec le temps.
+      <p class="text-lg text-gray-300 leading-relaxed mb-12">
+        En écrivant du code, je m’efforce de créer une véritable valeur ajoutée.
       </p>
 
       <div class="grid gap-8 mt-10 md:grid-cols-3">
+        <!-- Lisibilité Card -->
         <div
-          class="p-6 bg-white shadow-lg dark:bg-gray-800 rounded-lg transition-transform transform hover:scale-105"
+          class="p-6 bg-gray-700 shadow-lg rounded-lg transition-transform transform hover:scale-105"
         >
-          <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-3">
-            Lisibilité
-          </h3>
-          <p class="text-gray-600 dark:text-gray-400">
+          <h3 class="text-xl font-semibold text-gray-50 mb-3">Lisibilité</h3>
+          <p class="text-gray-300">
             Chaque ligne de code doit être claire et compréhensible, quel que
             soit le niveau d'expérience du développeur.
           </p>
         </div>
+
+        <!-- Réutilisabilité Card -->
         <div
-          class="p-6 bg-white shadow-lg dark:bg-gray-800 rounded-lg transition-transform transform hover:scale-105"
+          class="p-6 bg-gray-700 shadow-lg rounded-lg transition-transform transform hover:scale-105"
         >
-          <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-3">
+          <h3 class="text-xl font-semibold text-gray-50 mb-3">
             Réutilisabilité
           </h3>
-          <p class="text-gray-600 dark:text-gray-400">
+          <p class="text-gray-300">
             J'écris des composants et des fonctions modulaires qui peuvent être
             réutilisés dans différents contextes pour plus d'efficacité.
           </p>
         </div>
+
+        <!-- Maintenabilité Card -->
         <div
-          class="p-6 bg-white shadow-lg dark:bg-gray-800 rounded-lg transition-transform transform hover:scale-105"
+          class="p-6 bg-gray-700 shadow-lg rounded-lg transition-transform transform hover:scale-105"
         >
-          <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-3">
+          <h3 class="text-xl font-semibold text-gray-50 mb-3">
             Maintenabilité
           </h3>
-          <p class="text-gray-600 dark:text-gray-400">
+          <p class="text-gray-300">
             Le code bien documenté et structuré facilite les mises à jour et la
             collaboration sur le long terme.
           </p>
