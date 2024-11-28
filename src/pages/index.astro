@@ -26,6 +26,12 @@ const cardLinks: { image: string; alt: string; description: string }[] = [
 ];
 ---
 
+<style>
+  html {
+    scroll-behavior: smooth;
+  }
+</style>
+
 <link
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
   rel="stylesheet"
@@ -54,7 +60,7 @@ const cardLinks: { image: string; alt: string; description: string }[] = [
   <!-- Message scoll down -->
 
   <!-- Slide up About -->
-  <section class="py-20 bg-gray-800 text-gray-100" id="about">
+  <section class="py-20 bg-gray-800 text-gray-100 h-screen" id="about">
     <div class="container mx-auto px-6 md:px-12">
       <div class="flex flex-col gap-12">
         <!-- Texte à propos -->

@@ -38,25 +38,27 @@
               id="Combined-Shape"
               fill="#1C1D20"></path>
 
-            <!-- Texte positionné au centre -->
+            <!-- Text centered -->
             <text
               x="30%"
               y="55%"
               text-anchor="middle"
-              font-size="14"
+              font-size="1rem"
               font-family="Arial, sans-serif"
               fill="#FFFFFF"
+              font-weight="bold"
             >
-              Situé en France
+              Situé en Ile-de-France
             </text>
 
-            <!-- Image placée à droite du texte -->
+            <!-- Rotating Image -->
             <image
               x="73%"
               y="35%"
               width="40"
               height="40"
-              href="/assets/logo-blanc.svg"
+              href="/assets/globe-solid.svg"
+              class="rotating-globe"
             />
           </g>
         </g>
@@ -64,3 +66,19 @@
     </g>
   </svg>
 </div>
+
+<style>
+  .rotating-globe {
+    animation: spinY 4s infinite linear;
+    transform-origin: 80% 50%;
+  }
+
+  @keyframes spinY {
+    from {
+      transform: rotateY(0deg);
+    }
+    to {
+      transform: rotateY(360deg);
+    }
+  }
+</style>
