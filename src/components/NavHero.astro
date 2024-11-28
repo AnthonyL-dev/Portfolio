@@ -7,7 +7,7 @@ import type { iconPaths } from "./svg/IconPaths";
 const textLinks: { label: string; href: string }[] = [
   { label: "À Propos", href: "/" },
   { label: "Projet", href: "/projet/" },
-  { label: "Technologie", href: "/technologie/" },
+  { label: "CV", href: "/cv/" },
 ];
 
 /** Icon links to social media — edit these with links to your profiles! */
@@ -36,15 +36,20 @@ const iconLinks: {
 
 <nav
   id="animated-nav"
-  class="absolute top-6 left-0 right-0 z-[9999] w-screen font-brand font-medium mb-14 flex justify-center transition-all duration-700 ease-in-out opacity-0 -translate-y-full"
+  class="absolute text-white top-6 left-0 right-0 z-[9999] w-screen font-brand font-medium mb-14 flex justify-center"
 >
-  <div class="flex flex-row bg-white rounded-lg justify-between min-w-[80vw]">
+  <div class="flex flex-row justify-between min-w-[80vw]">
     <div class="flex justify-between gap-2 p-6 lg:p-0">
       <a
         href="/"
         class="flex items-center gap-2 text-gray-0 no-underline lg:text-lg"
       >
-        <Image src="/assets/logo.svg" alt={"Logo AL"} width={50} height={50} />
+        <Image
+          src="/assets/logo-blanc.svg"
+          alt={"Logo AL"}
+          width={50}
+          height={50}
+        />
       </a>
       <menu-button>
         <template>
@@ -61,7 +66,7 @@ const iconLinks: {
 
     <noscript>
       <ul
-        class="flex flex-col gap-4 text-base leading-5 list-none p-8 bg-gray-999 border-b border-gray-800 lg:flex-row lg:gap-0 lg:text-sm lg:rounded-full lg:border-0 lg:p-2 lg:bg-gradient-to-b from-gray-900 via-gray-800 to-transparent lg:shadow-md"
+        class="flex flex-col gap-4 text-base leading-5 list-none p-8 lg:flex-row lg:gap-0 lg:text-sm lg:rounded-full lg:border-0 lg:p-2 lg:shadow-md"
       >
         {
           textLinks.map(({ label, href }) => (
@@ -182,16 +187,4 @@ const iconLinks: {
     }
   }
   customElements.define("menu-button", MenuButton);
-
-  window.addEventListener("DOMContentLoaded", () => {
-    const nav = document.getElementById("animated-nav");
-
-    if (nav) {
-      // Vérifie que l'élément existe
-      nav.classList.remove("opacity-0", "-translate-y-full"); // Enlève les classes d'état initial
-      nav.classList.add("opacity-100", "translate-y-0"); // Ajoute les classes d'état final
-    } else {
-      console.error("L'élément avec l'ID 'animated-nav' est introuvable.");
-    }
-  });
 </script>

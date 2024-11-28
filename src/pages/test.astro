@@ -1,6 +1,11 @@
 ---
-import Carousel from "../components/technologie/Carousel.astro";
+import Localisation from "../components/temp/Localisation.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 import "../styles/global.css";
 ---
 
-<Carousel />
+<body transition:animate="fade" class="overflow-x-hidden h-">
+  <BaseLayout>
+    <Localisation />
+  </BaseLayout>
+</body>

@@ -1,0 +1,55 @@
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Doto:wght@100..900&display=swap"
+  rel="stylesheet"
+/>
+
+<div class="marquee">
+  <div class="track">
+    <div class="content">
+      Anthony Lorette&nbsp;&nbsp;&nbsp;&nbsp;Anthony
+      Lorette&nbsp;&nbsp;&nbsp;&nbsp;Anthony
+      Lorette&nbsp;&nbsp;&nbsp;&nbsp;Anthony
+      Lorette&nbsp;&nbsp;&nbsp;&nbsp;Anthony
+      Lorette&nbsp;&nbsp;&nbsp;&nbsp;Anthony
+      Lorette&nbsp;&nbsp;&nbsp;&nbsp;Anthony
+      Lorette&nbsp;&nbsp;&nbsp;&nbsp;Anthony Lorette
+    </div>
+  </div>
+</div>
+
+<style>
+  .content {
+    font-family: "Bebas Neue";
+    display: inline-block;
+    margin: 0 40px; /* Ajout d'espace entre chaque élément */
+  }
+
+  .marquee {
+    position: relative;
+    width: 100vw;
+    max-width: 100%;
+    height: 300px;
+    font-size: 144px;
+    font-weight: bold;
+    overflow-x: hidden;
+  }
+
+  .track {
+    position: absolute;
+    white-space: nowrap;
+    will-change: transform;
+    animation: marquee 60s linear infinite; /* Ralentissement de l'animation */
+  }
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+</style>
+``
