@@ -1,6 +1,30 @@
 ---
+import Icon from "../svg/Icon.astro";
+import type { iconPaths } from "../svg/IconPaths";
 import InfiniteMarquee from "./InfiniteMarquee.astro";
 import Localisation from "./Localisation.astro";
+
+const iconLinks: {
+  label: string;
+  href: string;
+  icon: keyof typeof iconPaths;
+}[] = [
+  {
+    label: "GitHub",
+    href: "https://github.com/AnthonyL-dev",
+    icon: "github-logo",
+  },
+  {
+    label: "Email",
+    href: "mailto:lorette.anthony.jrd@gmail.com",
+    icon: "mail-icon",
+  },
+  {
+    label: "Linkedin",
+    href: "https://www.linkedin.com/in/anthony-lorette",
+    icon: "linkedin-logo",
+  },
+];
 ---
 
 <title>Hero Section</title>
@@ -12,119 +36,142 @@ import Localisation from "./Localisation.astro";
 
 <body>
   <div class="hero">
-    <div class="hero__title">Développeur logiciel<br />web & mobile</div>
+    <div class="hero__title">
+      Développeur logiciel<br />web & mobile
+
+      <div class="py-2 lg:flex lg:justify-start lg:gap-0">
+        {
+          iconLinks.map(({ href, icon, label }) => (
+            <a
+              target="_blank"
+              href={href}
+              class="flex pr-4 text-white no-underline transition-colors hover:text-blue-300 focus:text-blue-300"
+            >
+              <span class="sr-only">{label}</span>
+              <Icon icon={icon} class="w-4 h-4" />
+            </a>
+          ))
+        }
+      </div>
+
+      <a
+        href="#about"
+        id="scrollButton"
+        class="group relative inline-flex items-center gap-2 text-white font-semibold text-lg hover:text-gray-200 transition"
+      >
+        Voir la suite
+        <span
+          class="transform transition-transform duration-300 group-hover:translate-x-2"
+          >→</span
+        >
+        <span
+          class="absolute left-0 bottom-0 w-0 h-[2px] bg-white transition-all duration-300 group-hover:w-full"
+        ></span>
+      </a>
+    </div>
     <div class="hero__localisation">
       <Localisation />
     </div>
     <div class="hero__marquee"><InfiniteMarquee /></div>
-    <div class="hero__down">
-      <a href="#about" id="scrollButton">Voir la suite</a>
-    </div>
-    <div class="cube"></div>
-    <div class="cube"></div>
-    <div class="cube"></div>
-    <div class="cube"></div>
-    <div class="cube"></div>
-    <div class="cube"></div>
   </div>
-
-  <style>
-    @import url("https://fonts.googleapis.com/css?family=Montserrat:700");
-
-    .hero {
-      background-color: #0040c1;
-      position: relative;
-      height: 100vh;
-      overflow: hidden;
-      font-family: "Montserrat", sans-serif;
-    }
-
-    .hero__title {
-      color: #fff;
-      position: absolute;
-      top: 40%;
-      left: 70%;
-      font-size: 2rem;
-      z-index: 1;
-    }
-
-    .hero__localisation {
-      position: absolute;
-      top: 40%;
-      font-size: 2rem;
-      z-index: 1;
-    }
-
-    .hero__marquee {
-      color: #fff;
-      position: absolute;
-      top: 70%;
-      z-index: 11;
-    }
-
-    .hero__down {
-      color: #fff;
-      position: absolute;
-      left: 70%;
-      top: 70%;
-      z-index: 11;
-    }
-
-    .cube {
-      position: absolute;
-      top: 80vh;
-      left: 45vw;
-      width: 10px;
-      height: 10px;
-      border: solid 1px #0035a5;
-      transform-origin: top left;
-      transform: scale(0) rotate(0deg) translate(-50%, -50%);
-      animation: cube 8s ease-in forwards infinite;
-    }
-
-    .cube:nth-child(2n) {
-      border-color: #0050f5;
-    }
-
-    .cube:nth-child(2) {
-      animation-delay: 0.5s; /* Démarre plus vite */
-      left: 25vw;
-      top: 40vh;
-    }
-
-    .cube:nth-child(3) {
-      animation-delay: 1s; /* Démarre rapidement */
-      left: 75vw;
-      top: 50vh;
-    }
-
-    .cube:nth-child(4) {
-      animation-delay: 1.5s; /* Légèrement plus tard */
-      left: 90vw;
-      top: 10vh;
-    }
-
-    .cube:nth-child(5) {
-      animation-delay: 2s; /* Un peu plus tard */
-      left: 10vw;
-      top: 85vh;
-    }
-
-    .cube:nth-child(6) {
-      animation-delay: 2.5s; /* Le dernier cube démarre à peine après */
-      left: 50vw;
-      top: 10vh;
-    }
-
-    @keyframes cube {
-      from {
-        transform: scale(0) rotate(0deg) translate(-50%, -50%);
-        opacity: 1;
-      }
-      to {
-        transform: scale(20) rotate(960deg) translate(-50%, -50%);
-        opacity: 0;
-      }
-    }
-  </style>
+  <div class="cube"></div>
+  <div class="cube"></div>
+  <div class="cube"></div>
+  <div class="cube"></div>
+  <div class="cube"></div>
+  <div class="cube"></div>
 </body>
+
+<style>
+  @import url("https://fonts.googleapis.com/css?family=Montserrat:700");
+
+  .hero {
+    background-color: #0040c1;
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    font-family: "Montserrat", sans-serif;
+  }
+
+  .hero__title {
+    color: #fff;
+    position: absolute;
+    top: 40%;
+    left: 70%;
+    font-size: 2rem;
+    z-index: 11;
+  }
+
+  .hero__localisation {
+    position: absolute;
+    top: 40%;
+    font-size: 2rem;
+    z-index: 1;
+  }
+
+  .hero__marquee {
+    color: #fff;
+    position: absolute;
+    top: 70%;
+    z-index: 11;
+  }
+
+  .cube {
+    position: absolute;
+    top: 80vh;
+    left: 85vw;
+    width: 10px;
+    height: 10px;
+    border: solid 1px #0035a5;
+    transform-origin: top left;
+    transform: scale(0) rotate(0deg) translate(-50%, -50%);
+    animation: cube 8s ease-in forwards infinite;
+  }
+
+  .cube:nth-child(2n) {
+    border-color: #0050f5;
+  }
+
+  .cube:nth-child(2) {
+    animation-delay: 1s; /* Démarre plus vite */
+    left: 10vw;
+    top: 25vh;
+  }
+
+  .cube:nth-child(3) {
+    animation-delay: 2s; /* Démarre rapidement */
+    left: 75vw;
+    top: 50vh;
+  }
+
+  .cube:nth-child(4) {
+    animation-delay: 3s; /* Légèrement plus tard */
+    left: 90vw;
+    top: 10vh;
+  }
+
+  /* bas gauche */
+  .cube:nth-child(5) {
+    animation-delay: 4s; /* Un peu plus tard */
+    left: 15vw;
+    top: 75vh;
+  }
+
+  /* haut gauche */
+  .cube:nth-child(6) {
+    animation-delay: 5s; /* Le dernier cube démarre à peine après */
+    left: 30vw;
+    top: 15vh;
+  }
+
+  @keyframes cube {
+    from {
+      transform: scale(0) rotate(0deg) translate(-50%, -50%);
+      opacity: 1;
+    }
+    to {
+      transform: scale(20) rotate(960deg) translate(-50%, -50%);
+      opacity: 0;
+    }
+  }
+</style>
