@@ -1,7 +1,10 @@
 <section id="timeline">
   <!-- Panel 1 -->
   <div class="tl-item">
-    <div class="tl-bg" style="background-image: url('/assets/clichy.jpg')">
+    <div
+      class="tl-bg"
+      style="background-image: url('/assets/à_propos/carrière/clichy.jpg')"
+    >
     </div>
     <div class="tl-year">
       <p class="f2 heading--sanSerif">2024</p>
@@ -21,7 +24,11 @@
 
   <!-- Panel 2 -->
   <div class="tl-item">
-    <div class="tl-bg" style="background-image: url('/assets/Paris.jpg')"></div>
+    <div
+      class="tl-bg"
+      style="background-image: url('/assets/à_propos/carrière/Paris.jpg')"
+    >
+    </div>
     <div class="tl-year">
       <p class="f2 heading--sanSerif">2021</p>
     </div>
@@ -52,40 +59,38 @@
     line-height: 1.75;
     display: flex;
     background-color: #031625;
-    /* Pour les écrans plus petits, on passe à une disposition verticale */
-    @media (max-width: 768px) {
-      flex-direction: column;
-      height: auto;
-    }
+    height: 100vh;
   }
-  .f2 {
-    color: white;
-    background-color: rgba(0, 0, 0, 0.25);
-    backdrop-filter: blur(4px); /* Blur background behind the content */
+
+  @media (max-width: 768px) {
+    #timeline {
+      flex-direction: column;
+      height: 200vh;
+    }
   }
 
   .tl-item {
     position: relative;
-    width: 50%; /* Deux panels => largeur 50% */
+    width: 50%;
     height: 100vh;
     color: #fff;
     overflow: hidden;
     transition: width 0.5s ease;
-    @media (max-width: 768px) {
-      width: 100%;
-      height: 100vh;
-    }
   }
 
   .tl-item:hover {
-    width: 60%; /* Le panel agrandi prendra 60% */
-    @media (max-width: 768px) {
-      width: 100%; /* Sur mobile, pas de changement de largeur */
-    }
+    width: 60%;
   }
 
-  .tl-item:not(:hover) {
-    width: 50%; /* L'autre panel rétrécit à 40% */
+  @media (max-width: 768px) {
+    .tl-item {
+      width: 100%;
+      height: 100vh;
+    }
+
+    .tl-item:hover {
+      width: 100%; /* Désactive l'animation de largeur sur mobile */
+    }
   }
 
   .tl-bg {
@@ -96,13 +101,6 @@
     background-position: center;
     transition: filter 0.5s ease;
     filter: grayscale(100%);
-    @media (max-width: 768px) {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background-size: cover;
-      background-position: center;
-    }
   }
 
   .tl-item:hover .tl-bg {
@@ -117,7 +115,10 @@
     z-index: 1;
     border-top: 1px solid #fff;
     border-bottom: 1px solid #fff;
-    @media (max-width: 768px) {
+  }
+
+  @media (max-width: 768px) {
+    .tl-year {
       top: 10%;
       left: 50%;
       transform: translate(-50%, -50%);
@@ -133,6 +134,9 @@
       sans-serif;
     font-size: 1.728rem;
     line-height: 1.8;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(4px);
   }
 
   .tl-content {
@@ -149,8 +153,22 @@
     backdrop-filter: blur(4px);
     padding: 10px;
     transition: all 0.75s ease 0.5s;
-    @media (max-width: 768px) {
-      width: 100%; /* Sur mobile, pas de changement de largeur */
+  }
+
+  @media (max-width: 768px) {
+    .tl-content {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transform: translateY(25px);
+      margin: 0;
     }
   }
 

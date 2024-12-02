@@ -22,7 +22,7 @@ const { title, description } = Astro.props;
     <MainHead title={title} description={description} />
     <ViewTransitions />
   </head>
-  <body transition:animate="slide" class="overflow-x-hidden">
+  <body transition:animate="fade" class="overflow-x-hidden">
     <NavHero />
     <slot />
     <Footer />

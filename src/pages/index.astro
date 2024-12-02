@@ -7,19 +7,19 @@ import HeroLayout from "../layouts/HeroLayout.astro";
 
 const cardLinks: { image: string; alt: string; description: string }[] = [
   {
-    image: "/assets/jeux_video.jpg",
+    image: "/assets/à_propos/passion/jeux_video.jpg",
     alt: "Passion jeux vidéo",
     description:
       "Les jeux vidéo sont pour moi une manière d'explorer des mondes fantastiques ou repousser mes limites dans des compétitions en ligne, ils nourrissent ma créativité et mon esprit stratégique. ",
   },
   {
-    image: "/assets/velo.jpg",
+    image: "/assets/à_propos/passion/velo.jpg",
     alt: "Passion vélo",
     description:
       "Le vélo est ma manière préférée de rester actif tout en explorant la nature. Chaque sortie est une occasion de se dépasser, de découvrir de nouveaux paysages et de profiter de la liberté que procure la route.",
   },
   {
-    image: "/assets/lecture.jpg",
+    image: "/assets/à_propos/passion/lecture.jpg",
     alt: "Passion lecture",
     description:
       "La lecture est mon échappatoire pour voyager dans le temps et l'espace. Que ce soit des romans captivants ou des essais inspirants, elle enrichit ma vision du monde et nourrit mon imagination. ",
@@ -45,21 +45,14 @@ const cardLinks: { image: string; alt: string; description: string }[] = [
 
   <!-- Image de fond -->
   <div class="absolute inset-0 flex justify-center items-end z-10">
-    <!-- <img
-      src="/assets/photo/Sujet.png"
-      alt="Anthony Lorette"
-      class="max-w-[825px] max-h-[90vh] aspect-[1031/992]"
-    /> -->
     <Image
-      src="/assets/photo/portrait2.png"
+      src="/assets/photo/portrait.png"
       loading="eager"
       width={657}
       height={950}
       alt="Portrait professionnel"
-      class="aspect-[727/1000]"
+      class="max-w-[35vw] max-h-[95vh] aspect-[1490/2048]"
     />
-
-    <!-- Overlay optionnel pour améliorer la lisibilité du texte -->
   </div>
 
   <!-- Contenu du hero -->
@@ -67,9 +60,6 @@ const cardLinks: { image: string; alt: string; description: string }[] = [
     <Playstation />
   </div>
 
-  <!-- Message scoll down -->
-
-  <!-- Slide up About -->
   <section class="py-20 bg-gray-800 text-gray-100" id="about">
     <div class="container mx-auto px-6 md:px-12">
       <div class="flex flex-col gap-12">
@@ -231,7 +221,7 @@ const cardLinks: { image: string; alt: string; description: string }[] = [
 
   <!-- Sections passions -->
   <section>
-    <div class="flex justify-evenly mt-6">
+    <div class="flex flex-col justify-evenly mt-6 md:flex-row">
       {
         cardLinks.map(({ image, alt, description }) => (
           <Passion image={image} alt={alt} description={description} />
