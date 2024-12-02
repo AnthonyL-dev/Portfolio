@@ -1,6 +1,5 @@
 ---
 import { Image } from "astro:assets";
-import Icon from "./svg/Icon.astro";
 import type { iconPaths } from "./svg/IconPaths";
 
 /** Main menu items */
@@ -36,152 +35,163 @@ const iconLinks: {
 
 <nav
   id="animated-nav"
-  class="absolute top-6 left-0 right-0 z-[9999] w-screen font-semibold mb-14 flex justify-center"
+  class="fixed top-0 left-0 right-0 z-[9999] w-full font-semibold bg-transparent py-6"
 >
-  <div class="flex flex-row justify-between min-w-[90vw]">
-    <div class="flex justify-between gap-2 p-6 lg:p-0">
-      <a
-        href="/"
-        class="flex items-center gap-2 text-white no-underline lg:text-lg"
-      >
-        <Image
-          src="/assets/logo-blanc.svg"
-          loading="eager"
-          alt={"Logo AL"}
-          width={50}
-          height={50}
-          class="transition-transform transform hover:scale-105"
-        />
-      </a>
-      <menu-button>
-        <template>
-          <button
-            class="flex relative border-0 rounded-full p-2 text-2xl shadow-md lg:hidden"
-            aria-expanded="false"
-          >
-            <span class="sr-only">Menu</span>
-            <Icon icon="list" />
-          </button>
-        </template>
-      </menu-button>
-    </div>
+  <div class="container mx-auto px-4 flex justify-between items-center">
+    <!-- Logo -->
+    <a href="/" class="flex items-center gap-2 text-white no-underline">
+      <Image
+        src="/assets/logo/logo-blanc.svg"
+        loading="eager"
+        alt={"Logo AL"}
+        width={50}
+        height={50}
+        class="transition-transform transform hover:scale-105"
+      />
+    </a>
 
-    <div
-      id="menu-content"
-      class="absolute left-0 right-0 lg:relative lg:flex lg:flex-row"
-      hidden
-    >
-      <ul
-        class="flex flex-col gap-4 text-base leading-5 list-none p-8 lg:flex-row lg:gap-0 lg:text-lg lg:rounded-full lg:border-0 lg:p-2 lg:font-medium"
-      >
+    <!-- Desktop Menu -->
+    <div class="hidden lg:flex items-center space-x-6">
+      <!-- Text Links -->
+      <div id="menu-content" class="flex space-x-6">
         {
-          textLinks.map(({ label, href }) => (
-            <li>
-              <a
-                aria-current={Astro.url.pathname === href}
-                class:list={[
-                  "inline-block no-underline lg:px-4 lg:py-2 lg:rounded-full lg:transition-colors lg:duration-300 lg:hover:text-gray-100 lg:hover:bg-accent-subtle-overlay text-white",
-                  {
-                    "text-white lg:text-accent-text-over lg:bg-accent-regular":
-                      Astro.url.pathname === href ||
-                      (href !== "/" && Astro.url.pathname.startsWith(href)),
-                  },
-                ]}
-                href={href}
-              >
-                {label}
-              </a>
-            </li>
-          ))
-        }
-      </ul>
-    </div>
-
-    <!-- <div
-      class="flex justify-between gap-3 p-6 rounded-b-xl lg:justify-self-end lg:items-center lg:p-0 lg:bg-transparent"
-    >
-      <div class="hidden lg:flex lg:justify-end lg:gap-0">
-        {
-          iconLinks.map(({ href, icon, label }) => (
+          textLinks.map((link) => (
             <a
-              target="_blank"
-              href={href}
-              class="flex p-2 text-white no-underline transition-colors hover:text-blue-300 focus:text-blue-300"
+              href={link.href}
+              class="text-white hover:text-blue-300 transition-colors"
             >
-              <span class="sr-only">{label}</span>
-              <Icon icon={icon} />
+              {link.label}
             </a>
           ))
         }
       </div>
-    </div> -->
+
+      <!-- Social Icon Links -->
+      <div class="flex space-x-4">
+        {
+          iconLinks.map((link) => (
+            <a
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={link.label}
+              class="text-white hover:text-blue-300 transition-colors"
+            >
+              <svg class="w-6 h-6">
+                <use href={link.icon} />
+              </svg>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+
+    <!-- Mobile Menu Toggle -->
+    <button
+      id="mobile-menu-toggle"
+      class="lg:hidden text-white focus:outline-none"
+      aria-label="Toggle mobile menu"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-6 w-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile Menu Overlay -->
+  <div
+    id="mobile-menu"
+    class="fixed inset-0 bg-black/90 z-[9998] flex flex-col justify-center items-center transform translate-x-full transition-transform duration-300 ease-in-out lg:hidden"
+  >
+    <button
+      id="mobile-menu-close"
+      class="absolute top-6 right-6 text-white focus:outline-none"
+      aria-label="Close mobile menu"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-6 w-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+
+    <div class="flex flex-col space-y-6 text-center">
+      {
+        textLinks.map((link) => (
+          <a
+            href={link.href}
+            class="text-white text-2xl hover:text-blue-300 transition-colors"
+          >
+            {link.label}
+          </a>
+        ))
+      }
+
+      <div class="flex justify-center space-x-6 mt-8">
+        {
+          iconLinks.map((link) => (
+            <a
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={link.label}
+              class="text-white hover:text-blue-300 transition-colors"
+            >
+              <svg class="w-8 h-8">
+                <use href={`/assets/icons/sprite.svg#${link.icon}`} />
+              </svg>
+            </a>
+          ))
+        }
+      </div>
+    </div>
   </div>
 </nav>
 
-<script>
-  class MenuButton extends HTMLElement {
-    constructor() {
-      super();
-      this.appendChild(this.querySelector("template")!.content.cloneNode(true));
-      const btn = this.querySelector("button")!;
-      const menu = document.getElementById("menu-content")!;
-      menu.hidden = true;
-      const setExpanded = (expand: boolean) => {
-        btn.setAttribute("aria-expanded", expand ? "true" : "false");
-        menu.hidden = !expand;
-      };
-      btn.addEventListener("click", () => setExpanded(menu.hidden));
-      const handleViewports = (e: MediaQueryList | MediaQueryListEvent) => {
-        setExpanded(e.matches);
-        btn.hidden = e.matches;
-      };
-      const mediaQueries = window.matchMedia("(min-width: 50em)");
-      handleViewports(mediaQueries);
-      mediaQueries.addEventListener("change", handleViewports);
-    }
-  }
-  customElements.define("menu-button", MenuButton);
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    const mobileMenuToggle = document.getElementById("mobile-menu-toggle");
+    const mobileMenuClose = document.getElementById("mobile-menu-close");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    mobileMenuToggle.addEventListener("click", () => {
+      mobileMenu.classList.remove("translate-x-full");
+    });
+
+    mobileMenuClose.addEventListener("click", () => {
+      mobileMenu.classList.add("translate-x-full");
+    });
+
+    // Close mobile menu when a link is clicked
+    const mobileMenuLinks = document.querySelectorAll("#mobile-menu a");
+    mobileMenuLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        mobileMenu.classList.add("translate-x-full");
+      });
+    });
+  });
 </script>
 
 <style>
-  /* Custom Tailwind styles */
   #animated-nav {
     font-family: "Montserrat", sans-serif;
   }
-
-  /* Hover effect for menu items */
-  #menu-content a:hover {
-    color: #93c5fd; /* Light blue for hover effect */
-    text-decoration: underline;
-  }
-
-  /* Hover effect for icons */
-  .hidden.lg\\:flex a:hover {
-    color: #93c5fd; /* Light blue for hover effect on icons */
-  }
 </style>
-
-<script>
-  class MenuButton extends HTMLElement {
-    constructor() {
-      super();
-      this.appendChild(this.querySelector("template")!.content.cloneNode(true));
-      const btn = this.querySelector("button")!;
-      const menu = document.getElementById("menu-content")!;
-      menu.hidden = true;
-      const setExpanded = (expand: boolean) => {
-        btn.setAttribute("aria-expanded", expand ? "true" : "false");
-        menu.hidden = !expand;
-      };
-      btn.addEventListener("click", () => setExpanded(menu.hidden));
-      const handleViewports = (e: MediaQueryList | MediaQueryListEvent) => {
-        setExpanded(e.matches);
-        btn.hidden = e.matches;
-      };
-      const mediaQueries = window.matchMedia("(min-width: 50em)");
-      handleViewports(mediaQueries);
-      mediaQueries.addEventListener("change", handleViewports);
-    }
-  }
-  customElements.define("menu-button", MenuButton);
-</script>
