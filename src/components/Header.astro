@@ -35,9 +35,11 @@ const iconLinks: {
 
 <nav
   id="animated-nav"
-  class="fixed top-0 left-0 right-0 z-[9999] w-full font-semibold bg-transparent py-6"
+  class="fixed top-0 left-0 right-0 z-[9999] w-full font-semibold bg-transparent py-6 lg:absolute"
 >
-  <div class="container mx-auto px-4 flex justify-between items-center">
+  <div
+    class="container mx-auto px-4 flex justify-between items-center min-w-[90vw]"
+  >
     <!-- Logo -->
     <a href="/" class="flex items-center gap-2 text-white no-underline">
       <Image
@@ -51,15 +53,12 @@ const iconLinks: {
     </a>
 
     <!-- Desktop Menu -->
-    <div class="hidden lg:flex items-center space-x-6">
+    <div class="hidden lg:flex justify-end space-x-6">
       <!-- Text Links -->
       <div id="menu-content" class="flex space-x-6">
         {
           textLinks.map((link) => (
-            <a
-              href={link.href}
-              class="text-white hover:text-blue-300 transition-colors"
-            >
+            <a href={link.href} class="text-white no-underline lg:text-lg ">
               {link.label}
             </a>
           ))
@@ -67,23 +66,6 @@ const iconLinks: {
       </div>
 
       <!-- Social Icon Links -->
-      <div class="flex space-x-4">
-        {
-          iconLinks.map((link) => (
-            <a
-              href={link.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={link.label}
-              class="text-white hover:text-blue-300 transition-colors"
-            >
-              <svg class="w-6 h-6">
-                <use href={link.icon} />
-              </svg>
-            </a>
-          ))
-        }
-      </div>
     </div>
 
     <!-- Mobile Menu Toggle -->
@@ -144,24 +126,6 @@ const iconLinks: {
           </a>
         ))
       }
-
-      <div class="flex justify-center space-x-6 mt-8">
-        {
-          iconLinks.map((link) => (
-            <a
-              href={link.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={link.label}
-              class="text-white hover:text-blue-300 transition-colors"
-            >
-              <svg class="w-8 h-8">
-                <use href={`/assets/icons/sprite.svg#${link.icon}`} />
-              </svg>
-            </a>
-          ))
-        }
-      </div>
     </div>
   </div>
 </nav>
@@ -193,5 +157,15 @@ const iconLinks: {
 <style>
   #animated-nav {
     font-family: "Montserrat", sans-serif;
+  }
+
+  /* Hover effect for menu items */
+  #menu-content a:hover {
+    color: #93c5fd; /* Light blue for hover effect */
+    text-decoration: underline;
+  }
+  /* Hover effect for icons */
+  .hidden.lg\\:flex a:hover {
+    color: #93c5fd; /* Light blue for hover effect on icons */
   }
 </style>
