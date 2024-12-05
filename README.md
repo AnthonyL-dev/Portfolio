@@ -1,54 +1,56 @@
-# Astro Starter Kit: Basics
+# 🌟 Mon Portfolio 
 
-```sh
-npm create astro@latest -- --template basics
-```
+Bienvenue dans le dépôt GitHub de mon portfolio ! Ce projet met en avant mon parcours professionnel et mes projets significatifs, avec une interface moderne et performante. 🚀
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## 🌍 Aperçu
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Ce portfolio a pour objectif de :
+- Présenter mon **parcours professionnel** 📂  
+- Mettre en avant **mes projets les plus significatifs** 🛠️  
+- Fournir un accès à mon **CV** 📄  
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+Découvrez-le en direct [**ici**](https://www.anthonylorette.com/).
 
-## 🚀 Project Structure
+---
 
-Inside of your Astro project, you'll see the following folders and files:
+## 📸 Captures d'écran
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+> Ajoutez ici des captures d'écran pour montrer un aperçu visuel de votre portfolio.
+![Capture d’écran 2024-12-05 110818](https://github.com/user-attachments/assets/47165c0f-2e0a-4ea1-9d9e-f21785bca9c1)
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+---
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## 🛠️ Technologies Utilisées
 
-Any static assets, like images, can be placed in the `public/` directory.
+- **Framework** : [Astro](https://astro.build/)  
+- **Styling** : [Tailwind CSS](https://tailwindcss.com/)  
+- **Langage** : [TypeScript](https://www.typescriptlang.org/)  
 
-## 🧞 Commands
+Ces outils permettent un développement rapide, performant et un design moderne.
 
-All commands are run from the root of the project, from a terminal:
+---
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## 📂 Arborescence
 
-## 👀 Want to learn more?
+```plaintext
+.
+├── public
+│   ├── assets        # Images, icônes, et autres ressources
+│   └── index.html
+├── src
+│   ├── components    # Composants Astro et React réutilisables
+│   ├── layouts       # Templates de mise en page
+│   ├── pages         # Pages principales (parcours, projets, CV)
+│   └── styles        # Styles globaux et Tailwind
+├── package.json      # Dépendances et scripts
+└── README.md         # Ce fichier
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+---
+
+## 📝 Fonctionnalités
+
+- **Parcours professionnel** : Une présentation détaillée de mon expérience professionnelle et de mes projets passés  
+- **Projets significatifs** : Mise en avant des projets les plus représentatifs de mes compétences, avec des descriptions et des liens vers leur code source  
+- **Accès au CV** : Téléchargement ou consultation en ligne de mon CV  
+- **Interface moderne** : Conception épurée et navigation intuitive  
+
