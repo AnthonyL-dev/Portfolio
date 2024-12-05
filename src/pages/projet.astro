@@ -1,12 +1,13 @@
 ---
 import { Image } from "astro:assets";
-import MainHead from "../components/MainHead.astro";
+
 import Windev from "../components/projet/windev.astro";
 import Cmasa from "../components/projet/cmasa.astro";
-import ProjetLayout from "../layouts/ProjetLayout.astro";
+
+import Layout from "../layouts/Layout.astro";
 ---
 
-<ProjetLayout>
+<Layout>
   <header>
     <a href="/" class="cd-logo"
       ><Image
@@ -1009,4 +1010,4 @@ Primary style
       });
     });
   </script>
-</ProjetLayout>
+</Layout>

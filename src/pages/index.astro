@@ -1,25 +1,27 @@
 ---
 import { Image } from "astro:assets";
-import Panel from "../components/à_propos/Panel.astro";
-import Passion from "../components/à_propos/Passion.astro";
-import Playstation from "../components/à_propos/Playstation.astro";
-import HeroLayout from "../layouts/HeroLayout.astro";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import Panel from "../components/a-propos/carriere/Panel.astro";
+import Playstation from "../components/a-propos/hero/Playstation.astro";
+import Passion from "../components/a-propos/passion/Passion.astro";
+import Layout from "../layouts/Layout.astro";
 
 const cardLinks: { image: string; alt: string; description: string }[] = [
   {
-    image: "/assets/à_propos/passion/jeux_video.jpg",
+    image: "/assets/a-propos/passion/jeux_video.jpg",
     alt: "Passion jeux vidéo",
     description:
       "Les jeux vidéo sont pour moi une manière d'explorer des mondes fantastiques ou repousser mes limites dans des compétitions en ligne, ils nourrissent ma créativité et mon esprit stratégique. ",
   },
   {
-    image: "/assets/à_propos/passion/velo.jpg",
+    image: "/assets/a-propos/passion/velo.jpg",
     alt: "Passion vélo",
     description:
       "Le vélo est ma manière préférée de rester actif tout en explorant la nature. Chaque sortie est une occasion de se dépasser, de découvrir de nouveaux paysages et de profiter de la liberté que procure la route.",
   },
   {
-    image: "/assets/à_propos/passion/lecture.jpg",
+    image: "/assets/a-propos/passion/lecture.jpg",
     alt: "Passion lecture",
     description:
       "La lecture est mon échappatoire pour voyager dans le temps et l'espace. Que ce soit des romans captivants ou des essais inspirants, elle enrichit ma vision du monde et nourrit mon imagination. ",
@@ -33,10 +35,11 @@ const cardLinks: { image: string; alt: string; description: string }[] = [
   }
 </style>
 
-<HeroLayout
+<Layout
   title="Anthony Lorette - À PROPOS"
   description="The personal site of Anthony Lorette"
 >
+  <Header />
   <!-- Hero section avec image de fond -->
 
   <!-- Image de fond -->
@@ -242,4 +245,5 @@ const cardLinks: { image: string; alt: string; description: string }[] = [
       </a>
     </div>
   </section>
-</HeroLayout>
+  <Footer />
+</Layout>

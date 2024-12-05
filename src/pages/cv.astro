@@ -1,13 +1,8 @@
 ---
-import CVLayout from "../layouts/CVLayout.astro";
+import Embed from "../components/cv/Embed.astro";
+import Layout from "../layouts/Layout.astro";
 ---
 
-<CVLayout>
-  <embed
-    src="/assets/cv/CV-2025.pdf"
-    width="500"
-    height="375"
-    type="application/pdf"
-    class="w-screen h-screen"
-  />
-</CVLayout>
+<Layout>
+  <Embed pdf="/assets/cv/CV-2025.pdf" />
+</Layout>

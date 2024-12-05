@@ -1,0 +1,9 @@
+---
+interface pdf {
+  chemin: string;
+}
+
+const { pdf } = Astro.props;
+---
+
+<embed src={pdf} type="application/pdf" class="w-screen h-screen" />

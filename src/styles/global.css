@@ -1,17 +1,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* Animation sur le titre (post-title) */
-/* ::view-transition-group(post-title) {
-  transition:
-    transform 0.5s ease,
-    opacity 0.5s ease;
-} */
-
-/* Animation pour un retour à la liste */
-/* ::view-transition-group(back-link) {
-  transition:
-    transform 0.5s ease,
-    opacity 0.5s ease;
-} */
