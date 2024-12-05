@@ -15,7 +15,7 @@ Découvrez-le en direct [**ici**](https://www.anthonylorette.com/).
 
 ## 📸 Captures d'écran
 
-> Ajoutez ici des captures d'écran pour montrer un aperçu visuel de votre portfolio.
+> 
 ![Capture d’écran 2024-12-05 110818](https://github.com/user-attachments/assets/47165c0f-2e0a-4ea1-9d9e-f21785bca9c1)
 
 ---
@@ -44,7 +44,7 @@ Ces outils permettent un développement rapide, performant et un design moderne.
 │   └── styles        # Styles globaux et Tailwind
 ├── package.json      # Dépendances et scripts
 └── README.md         # Ce fichier
-
+ ```
 ---
 
 ## 📝 Fonctionnalités
