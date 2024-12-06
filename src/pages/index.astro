@@ -3,8 +3,11 @@ import { Image } from "astro:assets";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import Panel from "../components/a-propos/carriere/Panel.astro";
+import Contact from "../components/a-propos/contact/Contact.astro";
 import Playstation from "../components/a-propos/hero/Playstation.astro";
+import Info from "../components/a-propos/info/Info.astro";
 import Passion from "../components/a-propos/passion/Passion.astro";
+import Philosophie from "../components/a-propos/philosophie/Philosophie.astro";
 import Layout from "../layouts/Layout.astro";
 
 const cardLinks: { image: string; alt: string; description: string }[] = [
@@ -59,178 +62,14 @@ const cardLinks: { image: string; alt: string; description: string }[] = [
     <Playstation />
   </div>
 
-  <section class="py-20 bg-gray-800 text-gray-100" id="about">
-    <div class="container mx-auto px-6 md:px-12">
-      <div class="flex flex-col gap-12">
-        <!-- Texte à propos -->
-        <div class="text-center md:text-left">
-          <h2 class="text-4xl font-extrabold text-gray-50">À propos de moi</h2>
-          <p class="mt-4 text-xl text-gray-300 max-w-3xl mx-auto md:mx-0">
-            Bonjour ! Je suis <strong class="text-indigo-400"
-              >Anthony Lorette</strong
-            >, un développeur passionné par l'informatique et l'innovation
-            numérique. Bien que je sois encore en début de parcours dans le
-            développement web, j'ai déjà acquis des compétences solides en
-            développement d'applications mobiles et en programmation logicielle.
-          </p>
-          <p class="mt-4 text-lg text-gray-400 max-w-3xl mx-auto md:mx-0">
-            Je suis actuellement en train de me perfectionner en développement
-            web, particulièrement dans les technologies front-end et back-end
-            modernes, et je suis constamment à la recherche de nouvelles
-            opportunités pour apprendre et grandir professionnellement.
-          </p>
-        </div>
-
-        <!-- Compétences clés -->
-        <div class="mt-12">
-          <h3
-            class="text-2xl font-semibold text-gray-50 text-center md:text-left"
-          >
-            Compétences clés
-          </h3>
-          <div
-            class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4 text-lg text-gray-300"
-          >
-            <!-- Outils PCSOFT -->
-            <div
-              class="flex items-center gap-4 p-4 bg-gray-700 rounded-lg shadow-md transition-transform transform hover:scale-105"
-            >
-              <i class="fas fa-tools w-8 h-8 text-gray-400"></i>
-              <Image
-                alt="Icone outil"
-                src={"/assets/a-propos/info/tools-solid.svg"}
-                width={10}
-                height={10}
-                class="w-8 h-8 text-gray-400"
-              />
-              <span class="font-medium">
-                <strong>Outils PCSOFT</strong>
-                <br />
-                Windev, Windev Mobile, HFSQL
-              </span>
-            </div>
-
-            <!-- Next.js -->
-            <div
-              class="flex items-center gap-4 p-4 bg-gray-700 rounded-lg shadow-md transition-transform transform hover:scale-105"
-            >
-              <i class="fab fa-react w-8 h-8 text-blue-400"></i>
-              <Image
-                alt="Icone outil"
-                src={"/assets/a-propos/info/react-brands-solid.svg"}
-                width={10}
-                height={10}
-                class="w-8 h-8 text-blue-400"
-              />
-              <span class="font-medium">
-                <strong>Web</strong>
-                <br />
-                Next.js, React.js, TypeScript
-              </span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Pourquoi travailler avec moi ? -->
-        <div class="mt-12">
-          <h3
-            class="text-xl font-semibold text-gray-50 text-center md:text-left"
-          >
-            Pourquoi travailler avec moi ?
-          </h3>
-          <ul class="mt-4 text-lg text-gray-300 list-disc list-inside">
-            <li class="mb-2">
-              ✅ <strong>Passion pour l'apprentissage</strong> : Toujours curieux
-              et motivé pour développer mes compétences, particulièrement en développement
-              web et mobile.
-            </li>
-            <li class="mb-2">
-              ✅ <strong>Adaptabilité</strong> : Capable de travailler avec différents
-              outils et technologies, de Windev à React.js, et prêt à apprendre de
-              nouvelles méthodologies et langages.
-            </li>
-            <li class="mb-2">
-              ✅ <strong>Engagement</strong> : Je mets toujours un point d'honneur
-              à livrer un travail de qualité, que ce soit pour une application mobile
-              ou une application web.
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
+  <!-- Info -->
+  <Info />
 
   <!-- Carrière-->
   <Panel />
 
   <!-- Philosophie de travail-->
-  <section
-    id="philosophy"
-    class="py-16 bg-gray-800 text-gray-100 w-screen h-auto"
-  >
-    <div class="max-w-screen-xl mx-auto px-4 text-center">
-      <h2 class="text-3xl font-extrabold text-gray-50 mb-6">
-        Ma Philosophie de Travail
-      </h2>
-      <p class="text-lg text-gray-300 leading-relaxed mb-6">
-        "Un bon code est un code lisible, réutilisable et maintenable."
-      </p>
-      <p class="text-lg text-gray-300 leading-relaxed mb-6">
-        Le rôle d’un développeur ne se limite pas à écrire des lignes de code.
-        Notre mission première est d’apporter des solutions à des
-        problématiques, et la manière dont nous les concevons fait toute la
-        différence.
-      </p>
-      <p class="text-lg text-gray-300 leading-relaxed mb-8">
-        Chaque projet est une opportunité de simplifier, d’enrichir et
-        d’optimiser l’expérience des utilisateurs. Il s’agit d’accompagner ces
-        derniers dans leur quotidien en proposant des outils fiables, intuitifs
-        et durables.
-      </p>
-      <p class="text-lg text-gray-300 leading-relaxed mb-12">
-        En écrivant du code, je m’efforce de créer une véritable valeur ajoutée.
-      </p>
-
-      <div class="grid gap-8 mt-10 md:grid-cols-3">
-        <!-- Lisibilité Card -->
-        <div
-          class="p-6 bg-gray-700 shadow-lg rounded-lg transition-transform transform hover:scale-105"
-        >
-          <h3 class="text-xl font-semibold text-gray-50 mb-3">Lisibilité</h3>
-          <p class="text-gray-300">
-            Chaque ligne de code doit être claire et compréhensible, quel que
-            soit le niveau d'expérience du développeur.
-          </p>
-        </div>
-
-        <!-- Réutilisabilité Card -->
-        <div
-          class="p-6 bg-gray-700 shadow-lg rounded-lg transition-transform transform hover:scale-105"
-        >
-          <h3 class="text-xl font-semibold text-gray-50 mb-3">
-            Réutilisabilité
-          </h3>
-          <p class="text-gray-300">
-            J'écris des composants et des fonctions modulaires qui peuvent être
-            réutilisés dans différents contextes pour plus d'efficacité.
-          </p>
-        </div>
-
-        <!-- Maintenabilité Card -->
-        <div
-          class="p-6 bg-gray-700 shadow-lg rounded-lg transition-transform transform hover:scale-105"
-        >
-          <h3 class="text-xl font-semibold text-gray-50 mb-3">
-            Maintenabilité
-          </h3>
-          <p class="text-gray-300">
-            Le code bien documenté et structuré facilite les mises à jour et la
-            collaboration sur le long terme.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
+  <Philosophie />
 
   <!-- Sections passions -->
   <section>
@@ -244,20 +83,7 @@ const cardLinks: { image: string; alt: string; description: string }[] = [
   </section>
 
   <!-- Contacter moi-->
-  <section class="bg-gray-50 py-16 text-gray-800 text-center">
-    <div class="container mx-auto px-6">
-      <h2 class="text-4xl font-bold mb-4">Contactez-moi</h2>
-      <p class="text-lg mb-6">
-        Vous souhaitez discuter d'un projet, poser une question ou simplement
-        dire bonjour ? Je suis toujours ravi d'échanger !
-      </p>
-      <a
-        href="mailto:lorette.anthony.jrd@gmail.com"
-        class="inline-block bg-gray-800 text-white font-semibold px-6 py-3 rounded-full shadow-md hover:bg-gray-700 hover:shadow-lg transition duration-300"
-      >
-        Envoyez-moi un email
-      </a>
-    </div>
-  </section>
+  <Contact />
+
   <Footer />
 </Layout>
