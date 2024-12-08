@@ -1,8 +1,13 @@
 ---
+import { getCollection } from "astro:content";
 import Essaie from "../components/projet/Essaie.astro";
 import Layout from "../layouts/Layout.astro";
+
+const projets = await getCollection("projets");
 ---
 
 <Layout>
-  <Essaie />
+  <ul class="projects-list">
+    {projets.map((projet) => <Essaie projet={projet} />)}
+  </ul>
 </Layout>
