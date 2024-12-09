@@ -1,35 +1,10 @@
 ---
 import { Image } from "astro:assets";
-import type { iconPaths } from "./IconPaths";
 
-/** Main menu items */
 const textLinks: { label: string; href: string }[] = [
   { label: "À Propos", href: "/" },
   { label: "Projet", href: "/projet/" },
   { label: "CV", href: "/cv/" },
-];
-
-/** Icon links to social media — edit these with links to your profiles! */
-const iconLinks: {
-  label: string;
-  href: string;
-  icon: keyof typeof iconPaths;
-}[] = [
-  {
-    label: "GitHub",
-    href: "https://github.com/AnthonyL-dev",
-    icon: "github-logo",
-  },
-  {
-    label: "Email",
-    href: "mailto:lorette.anthony.jrd@gmail.com",
-    icon: "mail-icon",
-  },
-  {
-    label: "Linkedin",
-    href: "https://www.linkedin.com/in/anthony-lorette",
-    icon: "linkedin-logo",
-  },
 ];
 ---
 
@@ -52,10 +27,9 @@ const iconLinks: {
       />
     </a>
 
-    <!-- Desktop Menu -->
+    <!-- Menu PC -->
     <div class="hidden lg:flex justify-end space-x-6">
-      <!-- Text Links -->
-      <div id="menu-content" class="flex space-x-6">
+      <div id="menu-content" class="flex space-x-6 font-bold">
         {
           textLinks.map((link) => (
             <a href={link.href} class="text-white no-underline lg:text-lg ">
@@ -64,11 +38,9 @@ const iconLinks: {
           ))
         }
       </div>
-
-      <!-- Social Icon Links -->
     </div>
 
-    <!-- Mobile Menu Toggle -->
+    <!-- Menu mobile -->
     <button
       id="mobile-menu-toggle"
       class="lg:hidden text-white focus:outline-none"
@@ -90,7 +62,7 @@ const iconLinks: {
     </button>
   </div>
 
-  <!-- Mobile Menu Overlay -->
+  <!-- Overlay mobile -->
   <div
     id="mobile-menu"
     class="fixed inset-0 bg-black/90 z-[9998] flex flex-col justify-center items-center transform translate-x-full transition-transform duration-300 ease-in-out lg:hidden"
@@ -159,13 +131,12 @@ const iconLinks: {
     font-family: "Montserrat", sans-serif;
   }
 
-  /* Hover effect for menu items */
   #menu-content a:hover {
-    color: #93c5fd; /* Light blue for hover effect */
+    color: #93c5fd;
     text-decoration: underline;
   }
-  /* Hover effect for icons */
+
   .hidden.lg\\:flex a:hover {
-    color: #93c5fd; /* Light blue for hover effect on icons */
+    color: #93c5fd;
   }
 </style>

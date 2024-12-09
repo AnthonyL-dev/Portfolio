@@ -8,6 +8,11 @@ module.exports = {
 		  montserrat: ['Montserrat', 'sans-serif'],
 		  roboto: ['Roboto', 'sans-serif'],
 		},
+		zIndex: {
+			1: '1',
+			2: '2',
+			3: '3'
+		  },
 	  },
 	},
 	plugins: [],

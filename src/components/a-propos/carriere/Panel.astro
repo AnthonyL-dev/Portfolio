@@ -1,190 +1,79 @@
-<section id="timeline">
+<!-- timeline -->
+<section
+  class="flex flex-col h-[200vh] font-sans text-base leading-7 md:h-screen md:flex-row"
+>
   <!-- Panel 1 -->
-  <div class="tl-item">
+  <div
+    class="relative w-full md:w-1/2 h-screen text-white overflow-hidden transition-all duration-500 ease-in-out md:hover:w-3/5 group"
+  >
     <div
-      class="tl-bg"
+      class="absolute w-full h-full bg-cover bg-center grayscale group-hover:grayscale-0 transition-all duration-500"
       style="background-image: url('/assets/a-propos/carriere/clichy.jpg')"
     >
     </div>
-    <div class="tl-year">
-      <p class="f2 heading--sanSerif">2024</p>
+    <div
+      class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 border-t border-b border-white"
+    >
+      <p
+        class="font-['Pathway_Gothic_One'] text-[1.728rem] leading-[1.8] text-white bg-black/25 backdrop-blur-sm"
+      >
+        2024
+      </p>
     </div>
-    <div class="tl-content">
-      <h1>Bureau ACS</h1>
+    <div
+      class="relative z-10 text-center mx-[1.618em] top-[55%] opacity-0 translate-y-[25px] group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-700 delay-500 bg-black/25 backdrop-blur-sm p-2.5"
+    >
+      <h1
+        class="font-['Pathway_Gothic_One'] uppercase text-[1.44rem] text-[#1779cf]"
+      >
+        Bureau ACS
+      </h1>
       <p>
         En tant que Lead Developer au sein du bureau ACS, situé à Clichy, j'ai
-        été responsable de l’analyse des besoins, de l’élaboration des
+        été responsable de l'analyse des besoins, de l'élaboration des
         spécifications techniques, du développement et de la maintenance des
         applications, ainsi que de la gestion des bases de données et de
-        l’automatisation des processus internes. Je supervisais une équipe de
+        l'automatisation des processus internes. Je supervisais une équipe de
         deux personnes.
       </p>
     </div>
   </div>
 
   <!-- Panel 2 -->
-  <div class="tl-item">
+  <div
+    class="relative w-full md:w-1/2 h-screen text-white overflow-hidden transition-all duration-500 ease-in-out md:hover:w-3/5 group"
+  >
     <div
-      class="tl-bg"
+      class="absolute w-full h-full bg-cover bg-center grayscale group-hover:grayscale-0 transition-all duration-500"
       style="background-image: url('/assets/a-propos/carriere/Paris.jpg')"
     >
     </div>
-    <div class="tl-year">
-      <p class="f2 heading--sanSerif">2021</p>
+    <div
+      class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 border-t border-b border-white"
+    >
+      <p
+        class="font-['Pathway_Gothic_One'] text-[1.728rem] leading-[1.8] text-white bg-black/25 backdrop-blur-sm"
+      >
+        2021
+      </p>
     </div>
-    <div class="tl-content">
-      <h1 class="f3 text--accent ttu">Sigmasoft</h1>
+    <div
+      class="relative z-10 text-center mx-[1.618em] top-[55%] opacity-0 translate-y-[25px] group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-700 delay-500 bg-black/25 backdrop-blur-sm p-2.5"
+    >
+      <h1
+        class="font-['Pathway_Gothic_One'] uppercase text-[1.44rem] text-[#1779cf]"
+      >
+        Sigmasoft
+      </h1>
       <p>
         Chez Sigmasoft, éditeur de logiciels pour les vendeurs/loueurs de
         matériels médicaux situé dans le 20ᵉ arrondissement de Paris, j'ai
         assuré la maintenance de logiciels Windev, fourni du support technique
         aux clients (assistance et installation de progiciels et matériel),
         réparé des machines sous Windows, et développé des solutions telles
-        qu’un logiciel de sauvegarde automatique et la mise à jour d’un
+        qu'un logiciel de sauvegarde automatique et la mise à jour d'un
         progiciel pour intégrer l'API de la sécurité sociale.
       </p>
     </div>
   </div>
 </section>
-
-<style>
-  #timeline {
-    font-family:
-      "Source Sans Pro",
-      Helvetica Neue,
-      Helvetica,
-      Arial,
-      sans-serif;
-    font-size: 16px;
-    line-height: 1.75;
-    display: flex;
-    background-color: #031625;
-    height: 100vh;
-  }
-
-  @media (max-width: 768px) {
-    #timeline {
-      flex-direction: column;
-      height: 200vh;
-    }
-  }
-
-  .tl-item {
-    position: relative;
-    width: 50%;
-    height: 100vh;
-    color: #fff;
-    overflow: hidden;
-    transition: width 0.5s ease;
-  }
-
-  .tl-item:hover {
-    width: 60%;
-  }
-
-  @media (max-width: 768px) {
-    .tl-item {
-      width: 100%;
-      height: 100vh;
-    }
-
-    .tl-item:hover {
-      width: 100%; /* Désactive l'animation de largeur sur mobile */
-    }
-  }
-
-  .tl-bg {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    transition: filter 0.5s ease;
-    filter: grayscale(100%);
-  }
-
-  .tl-item:hover .tl-bg {
-    filter: grayscale(0);
-  }
-
-  .tl-year {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
-    border-top: 1px solid #fff;
-    border-bottom: 1px solid #fff;
-  }
-
-  @media (max-width: 768px) {
-    .tl-year {
-      top: 10%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
-  }
-
-  .tl-year p {
-    font-family:
-      "Pathway Gothic One",
-      Helvetica Neue,
-      Helvetica,
-      Arial,
-      sans-serif;
-    font-size: 1.728rem;
-    line-height: 1.8;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.25);
-    backdrop-filter: blur(4px);
-  }
-
-  .tl-content {
-    position: relative;
-    z-index: 1;
-    text-align: center;
-    margin: 0 1.618em;
-    top: 55%;
-    opacity: 0;
-    transform: translateY(25px);
-    color: white;
-    display: inline-block;
-    background-color: rgba(0, 0, 0, 0.25);
-    backdrop-filter: blur(4px);
-    padding: 10px;
-    transition: all 0.75s ease 0.5s;
-  }
-
-  @media (max-width: 768px) {
-    .tl-content {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      opacity: 0;
-      margin: 0;
-    }
-  }
-
-  .tl-item:hover .tl-content {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  .tl-content h1 {
-    font-family:
-      "Pathway Gothic One",
-      Helvetica Neue,
-      Helvetica,
-      Arial,
-      sans-serif;
-    text-transform: uppercase;
-    color: #1779cf;
-    font-size: 1.44rem;
-  }
-</style>

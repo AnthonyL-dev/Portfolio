@@ -28,17 +28,15 @@ const iconLinks: {
 ---
 
 <title>Hero Section</title>
-<link
-  href="https://fonts.googleapis.com/css?family=Montserrat:700"
-  rel="stylesheet"
-/>
 
 <body>
-  <div class="hero">
-    <div class="hero__title">
+  <div class="bg-[#0040c1] relative h-screen overflow-hidden font-montserrat">
+    <div
+      class="font-bold text-white absolute z-3 top-[45%] left-[5%] text-xl flex flex-col md:top-[40%] md:left-[70%] md:text-4xl"
+    >
       Développeur logiciel<br />web & mobile
 
-      <div class="py-2 flex justify-start gap-0 my-3 lg:my-auto">
+      <div class="py-5 flex justify-start gap-0 my-3 lg:my-auto">
         {
           iconLinks.map(({ href, icon, label }) => (
             <a
@@ -58,20 +56,22 @@ const iconLinks: {
         id="scrollButton"
         class="group relative inline-flex items-center gap-2 text-white font-semibold text-lg hover:text-gray-200 transition"
       >
-        Voir la suite
-        <span
-          class="transform transition-transform duration-300 group-hover:translate-x-2"
-          >→</span
-        >
-        <span
-          class="absolute left-0 bottom-0 w-0 h-[2px] bg-white transition-all duration-300 group-hover:w-full"
-        ></span>
+        <span class="relative inline-block">
+          Voir la suite
+          <span
+            class="transform transition-transform duration-300 group-hover:translate-x-2"
+            >→</span
+          >
+          <span
+            class="absolute left-0 bottom-0 w-0 h-[2px] bg-white transition-all duration-300 group-hover:w-full"
+          ></span>
+        </span>
       </a>
     </div>
-    <div class="hero__localisation">
+    <div class="absolute top-[40%] text-4xl z-1">
       <Localisation />
     </div>
-    <div class="hero__marquee"><InfiniteMarquee /></div>
+    <div class="text-white absolute top-[70%] z-3"><InfiniteMarquee /></div>
   </div>
   <div class="cube"></div>
   <div class="cube"></div>
@@ -82,52 +82,6 @@ const iconLinks: {
 </body>
 
 <style>
-  @import url("https://fonts.googleapis.com/css?family=Montserrat:700");
-
-  .hero {
-    background-color: #0040c1;
-    position: relative;
-    height: 100vh;
-    overflow: hidden;
-    font-family: "Montserrat", sans-serif;
-  }
-
-  .hero__title {
-    color: #fff;
-    position: absolute;
-    top: 40%;
-    left: 70%;
-    font-size: 2rem;
-    z-index: 11;
-  }
-
-  @media (max-width: 768px) {
-    .hero__title {
-      color: #fff;
-      position: absolute;
-      top: 45%;
-      left: 5%;
-      font-size: 1.5rem;
-      z-index: 11;
-      display: flex;
-      flex-direction: column;
-    }
-  }
-
-  .hero__localisation {
-    position: absolute;
-    top: 40%;
-    font-size: 2rem;
-    z-index: 1;
-  }
-
-  .hero__marquee {
-    color: #fff;
-    position: absolute;
-    top: 70%;
-    z-index: 11;
-  }
-
   .cube {
     position: absolute;
     top: 80vh;
@@ -145,33 +99,33 @@ const iconLinks: {
   }
 
   .cube:nth-child(9) {
-    animation-delay: 1s; /* Démarre plus vite */
+    animation-delay: 1s;
     left: 10vw;
     top: 25vh;
   }
 
   .cube:nth-child(8) {
-    animation-delay: 2s; /* Démarre rapidement */
+    animation-delay: 2s;
     left: 75vw;
     top: 50vh;
   }
 
   .cube:nth-child(7) {
-    animation-delay: 3s; /* Légèrement plus tard */
+    animation-delay: 3s;
     left: 90vw;
     top: 10vh;
   }
 
   /* bas gauche */
   .cube:nth-child(5) {
-    animation-delay: 4s; /* Un peu plus tard */
+    animation-delay: 4s;
     left: 15vw;
     top: 75vh;
   }
 
   /* haut gauche */
   .cube:nth-child(6) {
-    animation-delay: 5s; /* Le dernier cube démarre à peine après */
+    animation-delay: 5s;
     left: 30vw;
     top: 15vh;
   }
