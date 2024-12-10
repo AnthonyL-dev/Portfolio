@@ -1,0 +1,83 @@
+---
+const navigation = [
+  { label: "À Propos", href: "/" },
+  { label: "Projet", href: "/projet/" },
+  { label: "CV", href: "/cv/", target: "_blank" },
+];
+---
+
+<nav
+  class="cd-primary-nav absolute z-1 top-0 left-0 h-[91%] w-full overflow-auto text-center opacity-0 transition-opacity delay-400 table"
+>
+  <ul
+    class="table-cell align-middle transform translate-y-[50px] transition-transform duration-400"
+  >
+    <li
+      class="cd-label relative my-[2.4em] mt-0 mb-[2em] text-[#51696b] uppercase font-bold text-[1.2rem] tracking-[1px]"
+    >
+      Navigation
+    </li>
+    {
+      navigation.map((chemin) => (
+        <li>
+          <a
+            class="inline-block px-4 py-2 rounded text-white transition-colors duration-200 text-[2.4rem] font-bold antialiased hover:bg-[#303e40] md:text-[4rem]"
+            href={chemin.href}
+            target={chemin.target || undefined}
+          >
+            {chemin.label}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</nav>
+
+<style>
+  .cd-primary-nav {
+    -webkit-transition: opacity 0s 0.4s;
+    -moz-transition: opacity 0s 0.4s;
+  }
+  .cd-primary-nav ul {
+    -webkit-transform: translateY(50px);
+    -moz-transform: translateY(50px);
+    -ms-transform: translateY(50px);
+    -o-transform: translateY(50px);
+    -webkit-transition: -webkit-transform 0.4s;
+    -moz-transition: -moz-transform 0.4s;
+  }
+  .cd-primary-nav a {
+    -webkit-transition: background 0.2s;
+    -moz-transition: background 0.2s;
+  }
+
+  .cd-primary-nav .cd-label::after {
+    /* line below .cd-label*/
+    content: "";
+    position: absolute;
+    left: 50%;
+    right: auto;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+    bottom: -16px;
+    height: 1px;
+    width: 40px;
+    background-color: currentColor;
+  }
+  .cd-primary-nav.nav-open {
+    opacity: 1;
+    -webkit-transition: opacity 0s;
+    -moz-transition: opacity 0s;
+    transition: opacity 0s;
+  }
+  .cd-primary-nav.nav-open ul {
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    transform: translateY(0);
+  }
+</style>

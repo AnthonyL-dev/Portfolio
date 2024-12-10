@@ -1,13 +1,156 @@
 ---
-import { getCollection } from "astro:content";
 import Essaie from "../components/projet/Essaie.astro";
 import Layout from "../layouts/Layout.astro";
-
-const projets = await getCollection("projets");
+import Nav from "../components/projet/Nav.astro";
+import Header from "../components/projet/Header.astro";
 ---
 
 <Layout>
-  <ul class="projects-list">
-    {projets.map((projet) => <Essaie projet={projet} />)}
-  </ul>
+  <Header />
+  <Nav />
+
+  <Essaie />
 </Layout>
+
+<style>
+  *,
+  *::after,
+  *::before {
+    box-sizing: border-box;
+  }
+
+  html {
+    font-size: 62.5%;
+  }
+  body {
+    font-size: 1.6rem;
+    font-family: sans-serif;
+    color: #2978a0;
+    background-color: #253031;
+  }
+
+  html,
+  body {
+    height: 100%;
+  }
+
+  a {
+    color: #315659;
+    text-decoration: none;
+  }
+
+  button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+</style>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const projectsContainer = document.querySelector(
+      ".cd-projects-container"
+    ) as HTMLElement | null;
+    const navigation = document.querySelector(
+      ".cd-primary-nav"
+    ) as HTMLElement | null;
+    const triggerNav = document.querySelector(
+      ".cd-nav-trigger"
+    ) as HTMLElement | null;
+    const logo = document.querySelector(".cd-logo") as HTMLElement | null;
+
+    if (!projectsContainer || !navigation || !triggerNav || !logo) {
+      console.error("Required elements are missing from the DOM");
+      return;
+    }
+
+    triggerNav.addEventListener("click", () => {
+      if (triggerNav.classList.contains("project-open")) {
+        // Fermer le projet
+        const selected = projectsContainer.querySelector(
+          ".selected"
+        ) as HTMLElement | null;
+        if (selected) {
+          selected.classList.remove("selected");
+          selected.addEventListener(
+            "transitionend",
+            () => {
+              const projectInfo = selected.querySelector(
+                ".cd-project-info"
+              ) as HTMLElement | null;
+              if (projectInfo) {
+                projectInfo.scrollTop = 0;
+                projectInfo.classList.remove("has-boxshadow");
+              }
+            },
+            { once: true }
+          );
+        }
+        projectsContainer.classList.remove("project-open");
+        triggerNav.classList.remove("project-open");
+        logo.classList.remove("project-open");
+      } else {
+        // Afficher/masquer la navigation
+        triggerNav.classList.toggle("nav-open");
+        projectsContainer.classList.toggle("nav-open");
+        navigation.classList.toggle("nav-open");
+      }
+    });
+
+    projectsContainer.addEventListener("click", (event) => {
+      const target = (event.target as HTMLElement).closest(
+        ".single-project"
+      ) as HTMLElement | null;
+      if (!target) return;
+
+      if (projectsContainer.classList.contains("nav-open")) {
+        // Fermer la navigation
+        triggerNav.classList.remove("nav-open");
+        projectsContainer.classList.remove("nav-open");
+        navigation.classList.remove("nav-open");
+      } else {
+        // Ouvrir le projet
+        target.classList.add("selected");
+        projectsContainer.classList.add("project-open");
+        triggerNav.classList.add("project-open");
+        logo.classList.add("project-open");
+      }
+    });
+
+    projectsContainer.addEventListener("click", (event) => {
+      const target = event.target as HTMLElement;
+      if (!target.classList.contains("cd-scroll")) return;
+
+      // Faire défiler vers le bas en cliquant sur la flèche
+      const selectedProject = projectsContainer.querySelector(
+        ".selected"
+      ) as HTMLElement | null;
+      if (selectedProject) {
+        const visibleProjectContent = selectedProject.querySelector(
+          ".cd-project-info"
+        ) as HTMLElement | null;
+        if (visibleProjectContent) {
+          const windowHeight = window.innerHeight;
+          visibleProjectContent.scrollTo({
+            top: windowHeight,
+            behavior: "smooth",
+          });
+        }
+      }
+    });
+
+    // Ajouter/retirer la classe `has-boxshadow` lors du défilement du contenu du projet
+    const projectInfos = projectsContainer.querySelectorAll(".cd-project-info");
+    projectInfos.forEach((projectInfo) => {
+      projectInfo.addEventListener("scroll", () => {
+        const element = projectInfo as HTMLElement;
+        const scrollTop = element.scrollTop;
+        if (scrollTop > 0) {
+          element.classList.add("has-boxshadow");
+        } else {
+          element.classList.remove("has-boxshadow");
+        }
+      });
+    });
+  });
+</script>

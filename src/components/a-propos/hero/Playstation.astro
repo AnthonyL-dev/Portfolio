@@ -27,59 +27,55 @@ const iconLinks: {
 ];
 ---
 
-<title>Hero Section</title>
+<div class="bg-[#0040c1] relative h-screen overflow-hidden font-montserrat">
+  <div
+    class="font-bold text-white absolute z-3 top-[45%] left-[5%] text-xl flex flex-col md:top-[40%] md:left-[70%] md:text-4xl"
+  >
+    Développeur logiciel<br />web & mobile
 
-<body>
-  <div class="bg-[#0040c1] relative h-screen overflow-hidden font-montserrat">
-    <div
-      class="font-bold text-white absolute z-3 top-[45%] left-[5%] text-xl flex flex-col md:top-[40%] md:left-[70%] md:text-4xl"
-    >
-      Développeur logiciel<br />web & mobile
-
-      <div class="py-5 flex justify-start gap-0 my-3 lg:my-auto">
-        {
-          iconLinks.map(({ href, icon, label }) => (
-            <a
-              target="_blank"
-              href={href}
-              class="flex pr-4 text-white no-underline transition-colors hover:text-blue-300 focus:text-blue-300"
-            >
-              <span class="sr-only">{label}</span>
-              <Icon icon={icon} class="w-4 h-4" />
-            </a>
-          ))
-        }
-      </div>
-
-      <a
-        href="#about"
-        id="scrollButton"
-        class="group relative inline-flex items-center gap-2 text-white font-semibold text-lg hover:text-gray-200 transition"
-      >
-        <span class="relative inline-block">
-          Voir la suite
-          <span
-            class="transform transition-transform duration-300 group-hover:translate-x-2"
-            >→</span
+    <div class="py-5 flex justify-start gap-0 my-3 lg:my-auto">
+      {
+        iconLinks.map(({ href, icon, label }) => (
+          <a
+            target="_blank"
+            href={href}
+            class="flex pr-4 text-white no-underline transition-colors hover:text-blue-300 focus:text-blue-300"
           >
-          <span
-            class="absolute left-0 bottom-0 w-0 h-[2px] bg-white transition-all duration-300 group-hover:w-full"
-          ></span>
-        </span>
-      </a>
+            <span class="sr-only">{label}</span>
+            <Icon icon={icon} class="w-4 h-4" />
+          </a>
+        ))
+      }
     </div>
-    <div class="absolute top-[40%] text-4xl z-1">
-      <Localisation />
-    </div>
-    <div class="text-white absolute top-[70%] z-3"><InfiniteMarquee /></div>
+
+    <a
+      href="#about"
+      id="scrollButton"
+      class="group relative inline-flex items-center gap-2 text-white font-semibold text-lg hover:text-gray-200 transition"
+    >
+      <span class="relative inline-block">
+        Voir la suite
+        <span
+          class="transform transition-transform duration-300 group-hover:translate-x-2"
+          >→</span
+        >
+        <span
+          class="absolute left-0 bottom-0 w-0 h-[2px] bg-white transition-all duration-300 group-hover:w-full"
+        ></span>
+      </span>
+    </a>
   </div>
-  <div class="cube"></div>
-  <div class="cube"></div>
-  <div class="cube"></div>
-  <div class="cube"></div>
-  <div class="cube"></div>
-  <div class="cube"></div>
-</body>
+  <div class="absolute top-[40%] text-4xl z-1">
+    <Localisation />
+  </div>
+  <div class="text-white absolute top-[70%] z-3"><InfiniteMarquee /></div>
+</div>
+<div class="cube"></div>
+<div class="cube"></div>
+<div class="cube"></div>
+<div class="cube"></div>
+<div class="cube"></div>
+<div class="cube"></div>
 
 <style>
   .cube {

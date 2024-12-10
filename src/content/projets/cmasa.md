@@ -32,7 +32,7 @@ Le projet CMASA vise à développer une application multi-tenant innovante pour 
 
 ### Caractéristiques Principales
 
-- **Langage** : Astro
+- **Langage** : NextJS
 - **Paradigme** : Architecture Multi-tenant
 - **Objectif** : Création d'une solution logicielle adaptative et évolutive
 
