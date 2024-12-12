@@ -18,7 +18,7 @@ const projetsCollection = await getCollection("projets");
             </h2>
           </div>
           <div class="cd-project-info absolute z-2 top-0 left-0 w-full h-full overflow-auto opacity-0 invisible ">
-            <button class="cd-scroll fixed z-1 top-[calc(100%-10rem)] left-1/2 overflow-hidden whitespace-nowrap text-transparent opacity-0 invisible transition-opacity transition-visibility duration-400 h-[0.8rem]">
+            <button class="cd-scroll fixed z-1 top-[calc(100%-10rem)] left-1/2 overflow-hidden whitespace-nowrap text-transparent opacity-0 invisible transition-opacity transition-visibility duration-400 h-[2rem]">
               Faites défiler vers le bas
             </button>
             <div class="content-wrapper relative z-2 pt-8 pb-12 bg-white  flex items-center md:py-16 md:h-screen">
@@ -213,6 +213,13 @@ const projetsCollection = await getCollection("projets");
     -webkit-transition: -webkit-transform 0.2s;
     -moz-transition: -moz-transform 0.2s;
     transition: transform 0.2s;
+  }
+
+  @media (max-width: 640px) {
+    /* Ajustement pour les petits écrans */
+    .cd-title::after {
+      top: calc(60% + 30px);
+    }
   }
   .single-project:nth-of-type(1) .cd-title {
     background-color: #2978a0;
