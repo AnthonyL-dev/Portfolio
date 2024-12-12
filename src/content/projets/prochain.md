@@ -4,8 +4,8 @@ description: "Description générique de l'application ou du système"
 langage: "Langage principal"
 architecture: "Type d'architecture"
 but: "Objectif principal du projet"
-chemin_image_introduction: "/assets/projet/default/defaultLanding.png"
-chemin_image_fonctionnalites: "/assets/projet/default/defaultFeatures.png"
+chemin_image_introduction: ""
+chemin_image_fonctionnalites: ""
 alt_image_introduction: "Image d'introduction par défaut"
 alt_image_fonctionnalites: "Image des fonctionnalités par défaut"
 technologies:
@@ -60,11 +60,11 @@ La solution est basée sur une architecture moderne, permettant :
 
 ## Capture d'Écran - Page de Lancement
 
-![Image d'introduction par défaut](/assets/projet/default/defaultLanding.png)
+![Image d'introduction par défaut]()
 
 ## Capture d'Écran - Fonctionnalités
 
-![Image des fonctionnalités par défaut](/assets/projet/default/defaultFeatures.png)
+![Image des fonctionnalités par défaut]()
 
 ## Perspectives et Évolutions
 

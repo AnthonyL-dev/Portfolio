@@ -1,7 +1,7 @@
 ---
 titre: "CMASA"
 description: "Application multi-tenant pour la gestion associative sportive"
-langage: "Astro"
+langage: "NextJS"
 architecture: "Multi-tenant"
 but: "Développer une solution centralisée pour la gestion des abonnements et du suivi des performances sportives"
 chemin_image_introduction: "/assets/projet/cmasa/CmasaLanding.png"
@@ -9,7 +9,7 @@ chemin_image_fonctionnalites: "/assets/projet/cmasa/CmasaLogin.png"
 alt_image_introduction: "Dashboard de l'application CMASA"
 alt_image_fonctionnalites: "Prévisualisation de l'application CMASA"
 technologies:
-  - "Astro"
+  - "NextJS"
   - "Multi-tenant"
   - "Dashboard"
 fonctionnalites:

@@ -1,10 +1,10 @@
 ---
 import { Image } from "astro:assets";
 
-const textLinks: { label: string; href: string }[] = [
+const navigation = [
   { label: "À Propos", href: "/" },
   { label: "Projet", href: "/projet/" },
-  { label: "CV", href: "/cv/" },
+  { label: "CV", href: "/cv/", target: "_blank" },
 ];
 ---
 
@@ -31,9 +31,13 @@ const textLinks: { label: string; href: string }[] = [
     <div class="hidden lg:flex justify-end space-x-6">
       <div id="menu-content" class="flex space-x-6 font-bold">
         {
-          textLinks.map((link) => (
-            <a href={link.href} class="text-white no-underline lg:text-lg ">
-              {link.label}
+          navigation.map((chemin) => (
+            <a
+              class="text-white no-underline lg:text-lg "
+              href={chemin.href}
+              target={chemin.target || undefined}
+            >
+              {chemin.label}
             </a>
           ))
         }
@@ -89,12 +93,13 @@ const textLinks: { label: string; href: string }[] = [
 
     <div class="flex flex-col space-y-6 text-center">
       {
-        textLinks.map((link) => (
+        navigation.map((chemin) => (
           <a
-            href={link.href}
             class="text-white text-2xl hover:text-blue-300 transition-colors"
+            href={chemin.href}
+            target={chemin.target || undefined}
           >
-            {link.label}
+            {chemin.label}
           </a>
         ))
       }

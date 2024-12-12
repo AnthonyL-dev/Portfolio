@@ -1,35 +1,13 @@
 ---
-import { Image } from "astro:assets";
-import Footer from "../components/Footer.astro";
-import Header from "../components/Header.astro";
+import Footer from "../components/a-propos/Footer.astro";
+import Header from "../components/a-propos/Header.astro";
 import Panel from "../components/a-propos/carriere/Panel.astro";
 import Contact from "../components/a-propos/contact/Contact.astro";
-import Playstation from "../components/a-propos/hero/Playstation.astro";
+import Hero from "../components/a-propos/hero/Hero.astro";
 import Info from "../components/a-propos/info/Info.astro";
-import Passion from "../components/a-propos/passion/Passion.astro";
+import ListePassion from "../components/a-propos/passion/ListePassion.astro";
 import Philosophie from "../components/a-propos/philosophie/Philosophie.astro";
 import Layout from "../layouts/Layout.astro";
-
-const cardLinks: { image: string; alt: string; description: string }[] = [
-  {
-    image: "/assets/a-propos/passion/jeux_video.jpg",
-    alt: "Passion jeux vidéo",
-    description:
-      "Les jeux vidéo sont pour moi une manière d'explorer des mondes fantastiques ou repousser mes limites dans des compétitions en ligne, ils nourrissent ma créativité et mon esprit stratégique. ",
-  },
-  {
-    image: "/assets/a-propos/passion/velo.jpg",
-    alt: "Passion vélo",
-    description:
-      "Le vélo est ma manière préférée de rester actif tout en explorant la nature. Chaque sortie est une occasion de se dépasser, de découvrir de nouveaux paysages et de profiter de la liberté que procure la route.",
-  },
-  {
-    image: "/assets/a-propos/passion/lecture.jpg",
-    alt: "Passion lecture",
-    description:
-      "La lecture est mon échappatoire pour voyager dans le temps et l'espace. Que ce soit des romans captivants ou des essais inspirants, elle enrichit ma vision du monde et nourrit mon imagination. ",
-  },
-];
 ---
 
 <style>
@@ -39,50 +17,21 @@ const cardLinks: { image: string; alt: string; description: string }[] = [
 </style>
 
 <Layout
-  title="Anthony Lorette - À PROPOS"
-  description="The personal site of Anthony Lorette"
+  title="Qui suis-je ? | Anthony Lorette"
+  description="Développeur passionné, créatif et rigoureux, je mets mes compétences techniques au service de projets innovants."
 >
   <Header />
-  <!-- Hero section avec image de fond -->
 
-  <!-- Image de fond -->
-  <div class="absolute inset-0 flex justify-center items-end z-1">
-    <Image
-      src="/assets/a-propos/hero/portrait.png"
-      loading="eager"
-      width={657}
-      height={950}
-      alt="Portrait professionnel"
-      class="w-full h-screen lg:max-w-[35vw] max-h-[95vh] object-cover"
-    />
-  </div>
+  <Hero />
 
-  <!-- Contenu du hero -->
-  <div class="h-screen w-screen">
-    <Playstation />
-  </div>
-
-  <!-- Info -->
   <Info />
 
-  <!-- Carrière-->
   <Panel />
 
-  <!-- Philosophie de travail-->
   <Philosophie />
 
-  <!-- Sections passions -->
-  <section>
-    <div class="flex flex-col justify-evenly mt-6 md:flex-row">
-      {
-        cardLinks.map(({ image, alt, description }) => (
-          <Passion image={image} alt={alt} description={description} />
-        ))
-      }
-    </div>
-  </section>
+  <ListePassion />
 
-  <!-- Contacter moi-->
   <Contact />
 
   <Footer />

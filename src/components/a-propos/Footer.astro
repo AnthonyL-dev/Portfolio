@@ -1,0 +1,79 @@
+---
+import Icon from "../Icon.astro";
+import type { iconPaths } from "../IconPaths";
+
+const navigation = [
+  { label: "À Propos", href: "/" },
+  { label: "Projet", href: "/projet/" },
+  { label: "CV", href: "/cv/", target: "_blank" },
+];
+
+const iconLinks: {
+  href: string;
+  icon: keyof typeof iconPaths;
+  aria: string;
+}[] = [
+  {
+    href: "mailto:lorette.anthony.jrd@gmail.com",
+    icon: "mail-icon",
+    aria: "Envoyer un email",
+  },
+  {
+    href: "https://www.linkedin.com/in/anthony-lorette",
+    icon: "linkedin-logo",
+    aria: "Visiter mon linkedin",
+  },
+  {
+    href: "https://github.com/AnthonyL-dev",
+    icon: "github-logo",
+    aria: "Visiter mon github",
+  },
+];
+---
+
+<footer class="p-4 md:p-6 lg:p-8 bg-gray-800 w-screen">
+  <div class="mx-auto flex flex-wrap justify-between items-center">
+    <!-- Section gauche : Copyright -->
+    <div class="flex-1 text-left text-sm text-gray-500 dark:text-gray-400">
+      © 2024-2025 Anthony Lorette™
+    </div>
+
+    <!-- Section centrale : Options de navigation -->
+
+    <div class="flex-1 text-center">
+      <ul
+        class="flex flex-wrap justify-center items-center space-x-4 md:space-x-6 text-gray-900 dark:text-white"
+      >
+        {
+          navigation.map((chemin) => (
+            <li>
+              <a
+                href={chemin.href}
+                target={chemin.target || undefined}
+                class="hover:underline"
+              >
+                {chemin.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+
+    <!-- Section droite : Moyens de contact -->
+
+    <div class="flex flex-1 justify-end space-x-4">
+      {
+        iconLinks.map((icone) => (
+          <a
+            href={icone.href}
+            class="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+            aria-label={icone.aria}
+          >
+            <Icon icon={icone.icon} />
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</footer>

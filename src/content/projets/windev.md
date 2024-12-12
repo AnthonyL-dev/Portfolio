@@ -1,5 +1,5 @@
 ---
-titre: "Windev"
+titre: "SafeBaseAuth"
 description: "Projet de démonstration des capacités de Windev Express"
 langage: "Windev Express"
 architecture: "Programmation Orientée Objet (POO)"
@@ -25,7 +25,7 @@ fonctionnalites:
 
 ## Contexte du Projet
 
-Le projet Windev est une démonstration technique visant à mettre en lumière les capacités puissantes de Windev Express dans le développement d'applications d'entreprise.
+Le projet SafeBaseAuth est une démonstration technique visant à mettre en lumière les capacités puissantes de Windev Express dans le développement d'applications d'entreprise.
 
 ## Approche Technologique
 
