@@ -11,7 +11,7 @@ const projetsCollection = await getCollection("projets");
         <li class="single-project absolute z-2 top-0 left-0 h-full w-full cursor-pointer transition-transform duration-400 backface-hidden transform-gpu">
           <div class="cd-title relative z-1 h-1/3 w-screen text-center table">
             <h2
-              class="relative z-1 text-[2.5rem] font-bold text-white table-cell align-middle transition-transform duration-400 backface-hidden transform-gpu md:text-[3.6rem]"
+              class="relative z-1 text-[2rem] font-bold text-white table-cell align-middle transition-transform duration-400 backface-hidden transform-gpu md:text-[3.6rem]"
               aria-label={projet.data.titre}
             >
               {projet.data.titre}: {projet.data.description}
@@ -421,82 +421,6 @@ const projetsCollection = await getCollection("projets");
       -ms-transform: translateX(-50%);
       -o-transform: translateX(-50%);
       transform: translateX(-50%);
-    }
-  }
-
-  .no-js .cd-nav-trigger,
-  .no-js .cd-scroll {
-    display: none;
-  }
-
-  .no-js .cd-primary-nav {
-    position: relative;
-    height: auto;
-    min-height: 94px;
-    display: block;
-    @include clearfix;
-    opacity: 1;
-
-    ul {
-      display: block;
-      padding-left: calc(5% + 60px);
-      @include clearfix;
-      float: right;
-      @include transform(translateY(0));
-    }
-
-    li {
-      display: inline-block;
-      float: left;
-      margin-top: 1.4em;
-
-      &.cd-label {
-        display: none;
-      }
-    }
-
-    a {
-      font-size: 1.6em;
-    }
-  }
-
-  .no-js .cd-projects-container {
-    height: auto;
-
-    .single-project {
-      position: relative;
-      @include transform(translateY(0));
-      top: 0;
-      cursor: auto;
-    }
-
-    .cd-title {
-      height: 300px;
-
-      &::before {
-        height: 300px;
-      }
-    }
-
-    h2 {
-      @include transform(translateY(0));
-    }
-
-    h2::after {
-      display: none;
-    }
-  }
-
-  .no-js .cd-project-info {
-    position: relative;
-    height: auto;
-    top: 0;
-    @include transform(translateY(0));
-    opacity: 1;
-    visibility: visible;
-
-    .content-wrapper {
-      margin-top: 0;
     }
   }
 </style>
