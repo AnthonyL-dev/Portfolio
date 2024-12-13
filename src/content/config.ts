@@ -1,4 +1,4 @@
-import { defineCollection, reference, z } from "astro:content";
+import { defineCollection, z } from "astro:content";
 
 const projets = defineCollection({
   schema: z.object({
@@ -16,27 +16,6 @@ const projets = defineCollection({
   }),
 });
 
-const blog = defineCollection({
-  type: "content",
-  schema: z.object({
-    title: z.string(),
-    // Référencer un auteur unique de la collection `authors` par `id`
-    author: reference("authors"),
-    // Référence un tableau d'articles liés de la collection `blog` par `slug`id`.
-    relatedPosts: z.array(reference("blog")),
-  }),
-});
-
-const authors = defineCollection({
-  type: "data",
-  schema: z.object({
-    name: z.string(),
-    portfolio: z.string().url(),
-  }),
-});
-
 export const collections = {
   projets,
-  blog,
-  authors,
 };

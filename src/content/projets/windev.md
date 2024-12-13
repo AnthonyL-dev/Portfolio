@@ -1,6 +1,6 @@
 ---
 titre: "SafeBaseAuth"
-description: "Projet de démonstration des capacités de Windev Express"
+description: "Projet de démonstration Windev"
 langage: "Windev Express"
 architecture: "Programmation Orientée Objet (POO)"
 but: "Illustrer les possibilités de Windev dans la gestion des utilisateurs et des réservations"

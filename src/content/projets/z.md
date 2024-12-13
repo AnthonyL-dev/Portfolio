@@ -1,6 +1,6 @@
 ---
-titre: "Nom du Projet"
-description: "Description générique de l'application ou du système"
+titre: ""
+description: ""
 langage: "Langage principal"
 architecture: "Type d'architecture"
 but: "Objectif principal du projet"

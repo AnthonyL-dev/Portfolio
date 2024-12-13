@@ -1,6 +1,6 @@
 ---
 titre: "CMASA"
-description: "Application multi-tenant pour la gestion associative sportive"
+description: "Site web pour la gestion associative sportive"
 langage: "NextJS"
 architecture: "Multi-tenant"
 but: "Développer une solution centralisée pour la gestion des abonnements et du suivi des performances sportives"
