@@ -36,3 +36,56 @@ import Layout from "../layouts/Layout.astro";
 
   <Footer />
 </Layout>
+
+<script>
+  class HoverHandler {
+    private hoverElements: NodeListOf<HTMLElement>;
+
+    constructor() {
+      // Utilisation de querySelectorAll avec un type générique
+      this.hoverElements = document.querySelectorAll(
+        ".hover-element"
+      ) as NodeListOf<HTMLElement>;
+      this.initEventListeners();
+    }
+
+    private initEventListeners(): void {
+      // Typage explicite et utilisation de HTMLElement
+      this.hoverElements.forEach((element: HTMLElement) => {
+        element.addEventListener(
+          "touchstart",
+          this.handleTouchStart.bind(this) as EventListener
+        );
+        element.addEventListener(
+          "touchend",
+          this.handleTouchEnd.bind(this) as EventListener
+        );
+      });
+    }
+
+    private handleTouchStart(event: TouchEvent): void {
+      const target = (event.target as Element).closest(
+        ".hover-element"
+      ) as HTMLElement | null;
+
+      if (target) {
+        // Retire d'abord toutes les classes actives
+        this.hoverElements.forEach((el) => el.classList.remove("hover-active"));
+
+        // Ajoute la classe à l'élément touché
+        target.classList.add("hover-active");
+      }
+    }
+
+    private handleTouchEnd(event: TouchEvent): void {
+      setTimeout(() => {
+        this.hoverElements.forEach((el) => el.classList.remove("hover-active"));
+      }, 200);
+    }
+  }
+
+  // Initialisation
+  document.addEventListener("DOMContentLoaded", () => {
+    new HoverHandler();
+  });
+</script>
